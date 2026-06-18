@@ -3,7 +3,7 @@ import { projects } from "@/lib/projects";
 
 const notoSans = Noto_Sans_JP({
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
+  weight: ["300", "400", "700"],
   variable: "--font-noto-sans",
 });
 
@@ -19,123 +19,95 @@ const skills = [
 
 export default function Home() {
   return (
-    <div className={`${notoSans.variable} font-[family-name:var(--font-noto-sans)] bg-white text-neutral-900`}>
+    <div className={`${notoSans.variable} font-[family-name:var(--font-noto-sans)]`}>
 
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-neutral-100">
-        <div className="px-8 md:px-16 h-14 flex items-center justify-between">
-          <span className="text-sm font-bold tracking-widest">taido.design</span>
-          <div className="flex gap-8 text-xs font-light tracking-widest text-neutral-400">
-            <a href="#works" className="hover:text-neutral-900 transition-colors">Works</a>
-            <a href="#about" className="hover:text-neutral-900 transition-colors">About</a>
-            <a href="#contact" className="hover:text-neutral-900 transition-colors">Contact</a>
-          </div>
+      {/* Nav — moss green */}
+      <nav style={{ background: "#4a5c3a", color: "white" }}
+        className="px-6 md:px-10 h-14 flex items-center justify-between">
+        <span className="text-sm font-light tracking-widest">taido.design</span>
+        <div className="flex gap-8 text-xs font-light" style={{ color: "rgba(255,255,255,0.55)" }}>
+          <a href="#works" className="hover:text-white transition-colors">Works</a>
+          <a href="#about" className="hover:text-white transition-colors">About</a>
+          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="pt-14">
-        {/* Full-width photo */}
-        <div
-          className="w-full flex items-end"
-          style={{ background: "#eeebe5", minHeight: "75vh", position: "relative" }}
+      {/* Hero — moss green */}
+      <section style={{ background: "#4a5c3a" }} className="px-6 md:px-10 pb-20 pt-16 md:pt-24">
+        <h1
+          className="font-bold leading-none text-white"
+          style={{ fontSize: "clamp(3rem, 9vw, 8rem)", letterSpacing: "-0.03em" }}
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-xs tracking-widest text-neutral-300 uppercase">Photo coming soon</p>
-          </div>
-          <div className="relative z-10 px-8 md:px-16 pb-12">
-            <h1
-              className="font-black leading-none text-neutral-900"
-              style={{ fontSize: "clamp(3rem, 9vw, 8rem)", letterSpacing: "-0.03em" }}
-            >
-              文脈を、<br />かたちに。
-            </h1>
-          </div>
-        </div>
-        {/* Meta bar */}
-        <div className="px-8 md:px-16 py-6 border-b border-neutral-100 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div>
-            <p className="text-xs text-neutral-300 tracking-widest uppercase mb-1">Name</p>
-            <p className="text-sm font-light">前田 敏幸</p>
-          </div>
-          <div>
-            <p className="text-xs text-neutral-300 tracking-widest uppercase mb-1">Base</p>
-            <p className="text-sm font-light">大阪府豊中市</p>
-          </div>
-          <div>
-            <p className="text-xs text-neutral-300 tracking-widest uppercase mb-1">Role</p>
-            <p className="text-sm font-light">Designer / Art Director</p>
-          </div>
-          <div>
-            <p className="text-xs text-neutral-300 tracking-widest uppercase mb-1">Contact</p>
-            <a href="mailto:hello@taido.design" className="text-sm font-light hover:opacity-50 transition-opacity">
-              hello@taido.design
-            </a>
-          </div>
+          文脈を、<br />かたちに。
+        </h1>
+        <p className="mt-6 text-sm font-light" style={{ color: "rgba(255,255,255,0.55)" }}>
+          Designer / Art Director — 前田 敏幸 / 大阪府豊中市
+        </p>
+
+        {/* Meta bar inside hero */}
+        <div className="mt-16 pt-8 grid grid-cols-2 md:grid-cols-4 gap-6"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.15)" }}>
+          {[
+            { label: "Name", value: "前田 敏幸" },
+            { label: "Base", value: "大阪府豊中市" },
+            { label: "Role", value: "Designer / Art Director" },
+            { label: "Mail", value: "hello@taido.design", href: "mailto:hello@taido.design" },
+          ].map(({ label, value, href }) => (
+            <div key={label}>
+              <p className="text-xs font-light mb-1 tracking-widest uppercase"
+                style={{ color: "rgba(255,255,255,0.35)" }}>{label}</p>
+              {href
+                ? <a href={href} className="text-sm font-light text-white hover:opacity-60 transition-opacity">{value}</a>
+                : <p className="text-sm font-light text-white">{value}</p>
+              }
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Works */}
-      <section id="works" className="px-8 md:px-16 pt-20 pb-32">
-        <div className="flex items-baseline justify-between mb-10 border-b border-neutral-100 pb-4">
-          <h2 className="text-xs font-light tracking-widest text-neutral-400 uppercase">Works</h2>
-          <span className="text-xs font-light text-neutral-300">{projects.length} categories</span>
+      {/* Works — white */}
+      <section id="works" style={{ background: "white" }}>
+        <div className="px-6 md:px-10 py-5 flex items-center justify-between"
+          style={{ borderBottom: "1px solid #eee" }}>
+          <h2 className="text-xs font-light tracking-widest" style={{ color: "#aaa" }}>WORKS</h2>
+          <span className="text-xs font-light" style={{ color: "#ccc" }}>{projects.length} categories</span>
         </div>
-
-        {/* Tile grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-neutral-100">
+        <div className="grid grid-cols-2" style={{ borderBottom: "1px solid #eee" }}>
           {projects.map((project) => (
-            <div key={project.id} className="bg-white group">
-              {/* Image area */}
-              <div
-                className="w-full bg-neutral-50 flex items-center justify-center transition-colors group-hover:bg-neutral-100"
-                style={{ aspectRatio: "4 / 3" }}
-              >
-                <span className="text-xs text-neutral-200 tracking-widest uppercase font-light">
-                  {project.category}
-                </span>
-              </div>
-              {/* Meta */}
-              <div className="px-4 py-5">
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <h3 className="text-sm font-bold leading-tight">{project.label}</h3>
-                </div>
-                <p className="text-xs font-light text-neutral-400 tracking-wider uppercase mb-3">
-                  {project.category}
-                </p>
-                <div className="flex flex-wrap gap-x-3 gap-y-1">
+            <div key={project.id} className="group" style={{ borderRight: "1px solid #eee", borderBottom: "1px solid #eee", marginRight: "-1px" }}>
+              <div className="px-5 pt-5 pb-3">
+                <h3 className="text-xs font-light mb-1" style={{ color: "#444" }}>{project.label}</h3>
+                <div className="flex flex-wrap gap-x-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="text-xs font-light text-neutral-300">
-                      {tag}
-                    </span>
+                    <span key={tag} className="text-xs font-light" style={{ color: "#ccc" }}>{tag}</span>
                   ))}
                 </div>
+              </div>
+              <div
+                className="w-full flex items-center justify-center transition-colors group-hover:bg-neutral-100"
+                style={{ aspectRatio: "4 / 3", background: "#f8f8f8" }}
+              >
+                <span className="text-xs font-light tracking-widest uppercase" style={{ color: "#ddd" }}>
+                  {project.category}
+                </span>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="px-8 md:px-16">
-        <div className="border-t border-neutral-100" />
-      </div>
-
-      {/* About */}
-      <section id="about" className="px-8 md:px-16 pt-20 pb-32">
-        <div className="flex items-baseline justify-between mb-10 border-b border-neutral-100 pb-4">
-          <h2 className="text-xs font-light tracking-widest text-neutral-400 uppercase">About</h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-16 mb-20">
+      {/* About — moss green */}
+      <section id="about" style={{ background: "#4a5c3a", color: "white" }}
+        className="px-6 md:px-10 py-24">
+        <h2 className="text-xs font-light tracking-widest mb-12"
+          style={{ color: "rgba(255,255,255,0.4)" }}>ABOUT</h2>
+        <div className="grid md:grid-cols-2 gap-16">
           <div>
-            <p
-              className="font-bold leading-tight mb-8"
-              style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.02em", lineHeight: 1.2 }}
-            >
+            <p className="font-bold leading-tight mb-8 text-white"
+              style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.02em", lineHeight: 1.2 }}>
               重いを軽く、<br />かたいをゆるく。
             </p>
-            <p className="text-sm font-light text-neutral-500 leading-loose">
+            <p className="text-sm font-light leading-loose" style={{ color: "rgba(255,255,255,0.65)" }}>
               社会的意義や文脈を、外に届く言葉・デザイン・写真・導線に変換する。
               地域・福祉・文化・出版・個人店・小規模事業者を主な顧客として、
               グラフィックデザインからブランディング、写真撮影、SNS広報設計まで
@@ -143,15 +115,14 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <p className="text-xs font-light tracking-widest text-neutral-300 uppercase mb-6">Disciplines</p>
+            <p className="text-xs font-light tracking-widest mb-6"
+              style={{ color: "rgba(255,255,255,0.35)" }}>DISCIPLINES</p>
             <div className="space-y-0">
               {skills.map((skill) => (
-                <div
-                  key={skill.en}
-                  className="flex items-center justify-between py-3 border-b border-neutral-50"
-                >
-                  <span className="text-sm font-light">{skill.ja}</span>
-                  <span className="text-xs font-light text-neutral-300 tracking-wider">{skill.en}</span>
+                <div key={skill.en} className="flex items-center justify-between py-3"
+                  style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+                  <span className="text-sm font-light text-white">{skill.ja}</span>
+                  <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.35)" }}>{skill.en}</span>
                 </div>
               ))}
             </div>
@@ -159,52 +130,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="px-8 md:px-16">
-        <div className="border-t border-neutral-100" />
-      </div>
-
-      {/* Contact */}
-      <section id="contact" className="px-8 md:px-16 pt-20 pb-32">
-        <div className="flex items-baseline justify-between mb-10 border-b border-neutral-100 pb-4">
-          <h2 className="text-xs font-light tracking-widest text-neutral-400 uppercase">Contact</h2>
-        </div>
-        <div className="grid md:grid-cols-2 gap-16 items-end">
+      {/* Contact — white */}
+      <section id="contact" style={{ background: "white" }}
+        className="px-6 md:px-10 py-24">
+        <h2 className="text-xs font-light tracking-widest mb-12" style={{ color: "#aaa" }}>CONTACT</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <p
-              className="font-bold leading-tight mb-8"
-              style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.02em", lineHeight: 1.2 }}
-            >
-              お仕事の<br />ご相談
-            </p>
-            <p className="text-sm font-light text-neutral-500 leading-loose">
-              地域・福祉・文化・出版・個人店・小規模事業者・IT企業・<br />
-              教育医療介護領域からのご依頼をお待ちしています。
+            <p className="text-xs font-light mb-3" style={{ color: "#aaa" }}>Address</p>
+            <p className="text-sm font-light leading-relaxed" style={{ color: "#555" }}>
+              大阪府豊中市<br />Toyonaka, Osaka, Japan
             </p>
           </div>
-          <div className="flex flex-col gap-6">
-            <div>
-              <p className="text-xs font-light tracking-widest text-neutral-300 uppercase mb-2">Email</p>
-              <a
-                href="mailto:hello@taido.design"
-                className="text-lg font-light hover:opacity-50 transition-opacity tracking-tight"
-              >
-                hello@taido.design →
-              </a>
-            </div>
+          <div>
+            <p className="text-xs font-light mb-3" style={{ color: "#aaa" }}>Mail</p>
+            <a href="mailto:hello@taido.design"
+              className="text-sm font-light hover:opacity-50 transition-opacity"
+              style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+              hello@taido.design
+            </a>
+          </div>
+          <div>
+            <p className="text-xs font-light mb-3" style={{ color: "#aaa" }}>Follow us</p>
+            <a href="https://www.instagram.com/maedatoshiyuk1_works/"
+              target="_blank" rel="noopener noreferrer"
+              className="text-sm font-light hover:opacity-50 transition-opacity"
+              style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+              Instagram
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-neutral-100 px-8 md:px-16 py-8 flex items-center justify-between">
-        <span className="text-xs font-light text-neutral-300 tracking-widest">
-          © 2026 taido.design / 前田敏幸
+      {/* Footer — moss green */}
+      <footer style={{ background: "#3a4a2c" }}
+        className="px-6 md:px-10 py-6 flex items-center justify-between">
+        <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.35)" }}>
+          Copyright © 2026 taido.design All Rights Reserved.
         </span>
-        <span className="text-xs font-light text-neutral-300 tracking-widest uppercase">
+        <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.35)" }}>
           Osaka, Japan
         </span>
       </footer>
+
     </div>
   );
 }
