@@ -49,7 +49,7 @@ export default function Home() {
           </div>
           <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
             <Image
-              src="/DSC01822.jpg"
+              src="/photobook-spread.jpg"
               alt="Works"
               fill
               className="object-cover"
