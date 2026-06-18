@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Noto_Sans_JP } from "next/font/google";
 import { projects } from "@/lib/projects";
 
@@ -34,15 +35,28 @@ export default function Home() {
 
       {/* Hero — moss green */}
       <section style={{ background: "#4a5c3a" }} className="px-6 md:px-10 pb-20 pt-16 md:pt-24">
-        <h1
-          className="font-bold leading-none text-white"
-          style={{ fontSize: "clamp(3rem, 9vw, 8rem)", letterSpacing: "-0.03em" }}
-        >
-          文脈を、<br />かたちに。
-        </h1>
-        <p className="mt-6 text-sm font-light" style={{ color: "rgba(255,255,255,0.55)" }}>
-          Designer / Art Director — 前田 敏幸 / 大阪府豊中市
-        </p>
+        <div className="grid md:grid-cols-2 gap-10 items-end mb-0">
+          <div>
+            <h1
+              className="font-bold leading-none text-white"
+              style={{ fontSize: "clamp(3rem, 9vw, 8rem)", letterSpacing: "-0.03em" }}
+            >
+              文脈を、<br />かたちに。
+            </h1>
+            <p className="mt-6 text-sm font-light" style={{ color: "rgba(255,255,255,0.55)" }}>
+              Designer / Art Director — 前田 敏幸 / 大阪府豊中市
+            </p>
+          </div>
+          <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
+            <Image
+              src="/DSC01822.jpg"
+              alt="Works"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
 
         {/* Meta bar inside hero */}
         <div className="mt-16 pt-8 grid grid-cols-2 md:grid-cols-4 gap-6"
@@ -84,12 +98,23 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="w-full flex items-center justify-center transition-colors group-hover:bg-neutral-100"
+                className="w-full relative overflow-hidden"
                 style={{ aspectRatio: "4 / 3", background: "#f8f8f8" }}
               >
-                <span className="text-xs font-light tracking-widest uppercase" style={{ color: "#ddd" }}>
-                  {project.category}
-                </span>
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.label}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center transition-colors group-hover:bg-neutral-100">
+                    <span className="text-xs font-light tracking-widest uppercase" style={{ color: "#ddd" }}>
+                      {project.category}
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           ))}
