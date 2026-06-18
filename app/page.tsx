@@ -8,13 +8,13 @@ const notoSans = Noto_Sans_JP({
 });
 
 const skills = [
-  "グラフィックデザイン",
-  "アートディレクション",
-  "ブランディング",
-  "編集・コピーライティング",
-  "写真撮影",
-  "SNS / 広報設計",
-  "動画・YouTube制作",
+  { ja: "グラフィックデザイン", en: "Graphic Design" },
+  { ja: "アートディレクション", en: "Art Direction" },
+  { ja: "ブランディング", en: "Branding" },
+  { ja: "編集・コピーライティング", en: "Editorial / Copywriting" },
+  { ja: "写真撮影", en: "Photography" },
+  { ja: "SNS / 広報設計", en: "SNS / PR" },
+  { ja: "動画・YouTube制作", en: "Video" },
 ];
 
 export default function Home() {
@@ -34,119 +34,165 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="pt-14 min-h-screen flex flex-col">
-        {/* Big photo area */}
+      <section className="pt-14">
+        {/* Full-width photo */}
         <div
-          className="flex-1 w-full flex items-end"
-          style={{ background: "#f0ede8", minHeight: "70vh", position: "relative" }}
+          className="w-full flex items-end"
+          style={{ background: "#eeebe5", minHeight: "75vh", position: "relative" }}
         >
-          {/* placeholder */}
           <div className="absolute inset-0 flex items-center justify-center">
             <p className="text-xs tracking-widest text-neutral-300 uppercase">Photo coming soon</p>
           </div>
-          {/* Tagline overlay */}
-          <div className="relative z-10 p-10 md:p-16">
+          <div className="relative z-10 px-8 md:px-16 pb-12">
             <h1
               className="font-black leading-none text-neutral-900"
-              style={{ fontSize: "clamp(2.8rem, 8vw, 6.5rem)", letterSpacing: "-0.02em" }}
+              style={{ fontSize: "clamp(3rem, 9vw, 8rem)", letterSpacing: "-0.03em" }}
             >
-              文脈を、<br />
-              かたちに。
+              文脈を、<br />かたちに。
             </h1>
           </div>
         </div>
-        {/* Sub copy */}
-        <div className="px-10 md:px-16 py-10 border-t border-neutral-100 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p className="text-sm font-light text-neutral-500 leading-loose">
-            グラフィックデザイン・アートディレクション・ブランディング<br className="md:hidden" />
-            <span className="hidden md:inline"> / </span>大阪府豊中市
-          </p>
-          <p className="text-xs font-light tracking-widest text-neutral-300 uppercase">
-            Designer / Art Director — 前田 敏幸
-          </p>
+        {/* Meta bar */}
+        <div className="px-8 md:px-16 py-6 border-b border-neutral-100 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div>
+            <p className="text-xs text-neutral-300 tracking-widest uppercase mb-1">Name</p>
+            <p className="text-sm font-light">前田 敏幸</p>
+          </div>
+          <div>
+            <p className="text-xs text-neutral-300 tracking-widest uppercase mb-1">Base</p>
+            <p className="text-sm font-light">大阪府豊中市</p>
+          </div>
+          <div>
+            <p className="text-xs text-neutral-300 tracking-widest uppercase mb-1">Role</p>
+            <p className="text-sm font-light">Designer / Art Director</p>
+          </div>
+          <div>
+            <p className="text-xs text-neutral-300 tracking-widest uppercase mb-1">Contact</p>
+            <a href="mailto:hello@taido.design" className="text-sm font-light hover:opacity-50 transition-opacity">
+              hello@taido.design
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Works */}
-      <section id="works" className="px-8 md:px-16 py-24">
-        <div className="flex items-baseline justify-between mb-12">
+      <section id="works" className="px-8 md:px-16 pt-20 pb-32">
+        <div className="flex items-baseline justify-between mb-10 border-b border-neutral-100 pb-4">
           <h2 className="text-xs font-light tracking-widest text-neutral-400 uppercase">Works</h2>
+          <span className="text-xs font-light text-neutral-300">{projects.length} categories</span>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-neutral-100">
+
+        {/* Tile grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-neutral-100">
           {projects.map((project) => (
-            <div
-              key={project.id}
-              className="group bg-white overflow-hidden"
-              style={{ aspectRatio: "1 / 1" }}
-            >
+            <div key={project.id} className="bg-white group">
               {/* Image area */}
               <div
                 className="w-full bg-neutral-50 flex items-center justify-center transition-colors group-hover:bg-neutral-100"
-                style={{ height: "65%" }}
+                style={{ aspectRatio: "4 / 3" }}
               >
-                <span className="text-xs text-neutral-200 tracking-widest uppercase">
+                <span className="text-xs text-neutral-200 tracking-widest uppercase font-light">
                   {project.category}
                 </span>
               </div>
-              {/* Text area */}
-              <div className="px-4 py-4" style={{ height: "35%" }}>
-                <p className="text-xs font-light text-neutral-400 mb-1 tracking-wider uppercase">
+              {/* Meta */}
+              <div className="px-4 py-5">
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <h3 className="text-sm font-bold leading-tight">{project.label}</h3>
+                </div>
+                <p className="text-xs font-light text-neutral-400 tracking-wider uppercase mb-3">
                   {project.category}
                 </p>
-                <h3 className="text-sm font-bold leading-tight">{project.label}</h3>
+                <div className="flex flex-wrap gap-x-3 gap-y-1">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="text-xs font-light text-neutral-300">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="px-8 md:px-16">
+        <div className="border-t border-neutral-100" />
+      </div>
+
       {/* About */}
-      <section id="about" className="px-8 md:px-16 py-24 border-t border-neutral-100">
-        <div className="max-w-3xl">
-          <h2 className="text-xs font-light tracking-widest text-neutral-400 uppercase mb-12">About</h2>
-          <p
-            className="font-bold leading-tight mb-12 text-neutral-900"
-            style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.01em" }}
-          >
-            重いを軽く、<br />かたいをゆるく。
-          </p>
-          <p className="text-sm font-light text-neutral-500 leading-loose mb-6 max-w-xl">
-            社会的意義や文脈を、外に届く言葉・デザイン・写真・導線に変換する。
-            地域・福祉・文化・出版・個人店・小規模事業者を主な顧客として、
-            グラフィックデザインからブランディング、写真撮影、SNS広報設計まで一貫して手がける。
-          </p>
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-4 gap-x-8">
-            {skills.map((skill) => (
-              <div key={skill} className="flex items-center gap-2">
-                <span className="w-1 h-1 rounded-full bg-neutral-200 shrink-0" />
-                <span className="text-xs font-light text-neutral-500">{skill}</span>
-              </div>
-            ))}
+      <section id="about" className="px-8 md:px-16 pt-20 pb-32">
+        <div className="flex items-baseline justify-between mb-10 border-b border-neutral-100 pb-4">
+          <h2 className="text-xs font-light tracking-widest text-neutral-400 uppercase">About</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-16 mb-20">
+          <div>
+            <p
+              className="font-bold leading-tight mb-8"
+              style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.02em", lineHeight: 1.2 }}
+            >
+              重いを軽く、<br />かたいをゆるく。
+            </p>
+            <p className="text-sm font-light text-neutral-500 leading-loose">
+              社会的意義や文脈を、外に届く言葉・デザイン・写真・導線に変換する。
+              地域・福祉・文化・出版・個人店・小規模事業者を主な顧客として、
+              グラフィックデザインからブランディング、写真撮影、SNS広報設計まで
+              一貫して手がける。
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-light tracking-widest text-neutral-300 uppercase mb-6">Disciplines</p>
+            <div className="space-y-0">
+              {skills.map((skill) => (
+                <div
+                  key={skill.en}
+                  className="flex items-center justify-between py-3 border-b border-neutral-50"
+                >
+                  <span className="text-sm font-light">{skill.ja}</span>
+                  <span className="text-xs font-light text-neutral-300 tracking-wider">{skill.en}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="px-8 md:px-16">
+        <div className="border-t border-neutral-100" />
+      </div>
+
       {/* Contact */}
-      <section id="contact" className="px-8 md:px-16 py-24 border-t border-neutral-100">
-        <h2 className="text-xs font-light tracking-widest text-neutral-400 uppercase mb-12">Contact</h2>
-        <div className="max-w-lg">
-          <p
-            className="font-bold leading-tight mb-10 text-neutral-900"
-            style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.01em" }}
-          >
-            お仕事の<br />ご相談
-          </p>
-          <p className="text-sm font-light text-neutral-500 leading-loose mb-10">
-            地域・福祉・文化・出版・個人店・小規模事業者・IT企業・教育医療介護領域からのご依頼をお待ちしています。
-          </p>
-          <a
-            href="mailto:hello@taido.design"
-            className="inline-flex items-center gap-3 text-sm font-light tracking-wider text-neutral-900 hover:opacity-50 transition-opacity"
-            style={{ borderBottom: "1px solid #1a1a1a", paddingBottom: "4px" }}
-          >
-            hello@taido.design
-            <span className="text-neutral-400">→</span>
-          </a>
+      <section id="contact" className="px-8 md:px-16 pt-20 pb-32">
+        <div className="flex items-baseline justify-between mb-10 border-b border-neutral-100 pb-4">
+          <h2 className="text-xs font-light tracking-widest text-neutral-400 uppercase">Contact</h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-16 items-end">
+          <div>
+            <p
+              className="font-bold leading-tight mb-8"
+              style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.02em", lineHeight: 1.2 }}
+            >
+              お仕事の<br />ご相談
+            </p>
+            <p className="text-sm font-light text-neutral-500 leading-loose">
+              地域・福祉・文化・出版・個人店・小規模事業者・IT企業・<br />
+              教育医療介護領域からのご依頼をお待ちしています。
+            </p>
+          </div>
+          <div className="flex flex-col gap-6">
+            <div>
+              <p className="text-xs font-light tracking-widest text-neutral-300 uppercase mb-2">Email</p>
+              <a
+                href="mailto:hello@taido.design"
+                className="text-lg font-light hover:opacity-50 transition-opacity tracking-tight"
+              >
+                hello@taido.design →
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -155,11 +201,10 @@ export default function Home() {
         <span className="text-xs font-light text-neutral-300 tracking-widest">
           © 2026 taido.design / 前田敏幸
         </span>
-        <span className="text-xs font-light text-neutral-300 tracking-widest">
-          OSAKA, JAPAN
+        <span className="text-xs font-light text-neutral-300 tracking-widest uppercase">
+          Osaka, Japan
         </span>
       </footer>
-
     </div>
   );
 }
