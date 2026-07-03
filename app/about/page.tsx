@@ -42,23 +42,6 @@ export default function About() {
           </p>
         </div>
 
-        {/* Career */}
-        <div className="mb-16" style={{ borderTop: "1px solid #eee", paddingTop: "2rem" }}>
-          <p className="text-xs font-light mb-6" style={{ color: "#bbb", letterSpacing: "0.12em" }}>CAREER</p>
-          <div className="space-y-0">
-            {[
-              { year: "----", text: "（仮）経歴・学歴を記入" },
-              { year: "----", text: "（仮）経歴を記入" },
-              { year: "----", text: "（仮）taido.design 設立" },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-8 py-3" style={{ borderBottom: "1px solid #f0f0f0" }}>
-                <span className="text-xs font-light shrink-0" style={{ color: "#bbb", letterSpacing: "0.05em", paddingTop: "1px" }}>{item.year}</span>
-                <span className="text-xs font-light" style={{ color: "#555", lineHeight: 1.8 }}>{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Base */}
         <div style={{ borderTop: "1px solid #eee", paddingTop: "2rem" }}>
           <p className="text-xs font-light mb-3" style={{ color: "#bbb", letterSpacing: "0.12em" }}>BASE</p>
