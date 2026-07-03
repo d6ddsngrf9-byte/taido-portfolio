@@ -22,7 +22,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} style={{ maxWidth: '480px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
       <label style={labelStyle}>
         お名前 <span style={{ color: '#c00' }}>*</span>
-        <input name="name" required style={inputStyle} placeholder="前田 敏幸" />
+        <input name="name" required style={inputStyle} placeholder="山田 花子" />
       </label>
       <label style={labelStyle}>
         メールアドレス <span style={{ color: '#c00' }}>*</span>
