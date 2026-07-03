@@ -3,7 +3,7 @@
     "id": "branding-vi",
     "client": "むすびばな",
     "year": "2026",
-    "description": "ロゴ・名刺・パンフレットデザイン",
+    "description": "ロゴ・名刺・パンフレット・編集デザイン",
     "category": "branding",
     "images": [
       "/musubibana-card-close.jpg",
@@ -16,22 +16,11 @@
     "coverImage": "/musubibana-card-close.jpg"
   },
   {
-    "id": "editorial",
-    "client": "むすびばな",
-    "year": "2024",
-    "description": "冊子・編集デザイン",
-    "category": "editorial",
-    "images": [
-      "/musubibana-pamphlet-cover.jpg"
-    ],
-    "coverImage": "/musubibana-pamphlet-cover.jpg"
-  },
-  {
     "id": "photography",
-    "client": "（仮）クライアント名",
-    "year": "2024",
-    "description": "写真撮影",
-    "category": "photography",
+    "client": "澄毅",
+    "year": "2026",
+    "description": "写真集ディレクション・デザイン・造本設計",
+    "category": "graphic-design",
     "images": [
       "/photobook-embroidery-detail.jpg"
     ],
