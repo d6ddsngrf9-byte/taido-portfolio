@@ -3,6 +3,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import { getProjects } from "@/lib/projects";
 import Nav from "@/app/components/Nav";
 import WorksGrid from "@/app/components/WorksGrid";
+import ContactForm from "@/app/components/ContactForm";
 
 const notoSans = Noto_Sans_JP({
   subsets: ["latin"],
@@ -103,47 +104,50 @@ export default function Home() {
       <section id="contact" style={{ background: "white" }}
         className="px-6 md:px-10 py-16">
         <h2 className="text-xs font-light tracking-widest mb-10" style={{ color: "#888", letterSpacing: "0.12em" }}>CONTACT</h2>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-          <div>
-            <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Address</p>
-            <p className="text-xs font-light leading-loose" style={{ color: "#333" }}>
-              大阪府豊中市<br />Toyonaka, Osaka, Japan
-            </p>
-          </div>
-          <div>
-            <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Mail</p>
-            <a href="mailto:hello@taido.design"
-              className="text-xs font-light hover:opacity-50 transition-opacity"
-              style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-              hello@taido.design
-            </a>
-          </div>
-          <div>
-            <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Follow</p>
-            <a href="https://www.instagram.com/maedatoshiyuk1_works/"
-              target="_blank" rel="noopener noreferrer"
-              className="text-xs font-light hover:opacity-50 transition-opacity"
-              style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-              Instagram
-            </a>
-          </div>
-          <div>
-            <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Blog</p>
-            <a href="https://note.com/maedatoshiyuk1"
-              target="_blank" rel="noopener noreferrer"
-              className="text-xs font-light hover:opacity-50 transition-opacity"
-              style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-              note
-            </a>
-          </div>
-          <div>
-            <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Store</p>
-            <a href="https://madeastore.stores.jp/"
-              target="_blank" rel="noopener noreferrer"
-              className="text-xs font-light hover:opacity-50 transition-opacity"
-              style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-              madea store
-            </a>
+        <div className="grid md:grid-cols-2 gap-16">
+          <ContactForm />
+          <div className="flex flex-col gap-6">
+            <div>
+              <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Address</p>
+              <p className="text-xs font-light leading-loose" style={{ color: "#333" }}>
+                大阪府豊中市<br />Toyonaka, Osaka, Japan
+              </p>
+            </div>
+            <div>
+              <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Mail</p>
+              <a href="mailto:hello@taido.design"
+                className="text-xs font-light hover:opacity-50 transition-opacity"
+                style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+                hello@taido.design
+              </a>
+            </div>
+            <div>
+              <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Follow</p>
+              <a href="https://www.instagram.com/maedatoshiyuk1_works/"
+                target="_blank" rel="noopener noreferrer"
+                className="text-xs font-light hover:opacity-50 transition-opacity"
+                style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+                Instagram
+              </a>
+            </div>
+            <div>
+              <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Blog</p>
+              <a href="https://note.com/maedatoshiyuk1"
+                target="_blank" rel="noopener noreferrer"
+                className="text-xs font-light hover:opacity-50 transition-opacity"
+                style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+                note
+              </a>
+            </div>
+            <div>
+              <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Store</p>
+              <a href="https://madeastore.stores.jp/"
+                target="_blank" rel="noopener noreferrer"
+                className="text-xs font-light hover:opacity-50 transition-opacity"
+                style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+                madea store
+              </a>
+            </div>
           </div>
         </div>
       </section>
