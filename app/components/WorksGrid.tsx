@@ -1,12 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import type { Project } from '@/lib/projects';
 import { CATEGORIES } from '@/lib/categories';
 
-export default function WorksGrid({ projects }: { projects: Project[] }) {
-  const [active, setActive] = useState<string | null>(null);
+export default function WorksGrid({ projects, initialCategory = null }: { projects: Project[]; initialCategory?: string | null }) {
+  const [active, setActive] = useState<string | null>(initialCategory);
+
+  // DISCIPLINES などから ?category= 付きで来たとき、その絞り込みに追従する
+  useEffect(() => {
+    setActive(initialCategory);
+  }, [initialCategory]);
 
   const filtered = active ? projects.filter((p) => p.category === active) : projects;
 

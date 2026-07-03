@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Noto_Sans_JP } from "next/font/google";
 import { getProjects } from "@/lib/projects";
+import { CATEGORIES } from "@/lib/categories";
 import Nav from "@/app/components/Nav";
 import WorksGrid from "@/app/components/WorksGrid";
 import ContactForm from "@/app/components/ContactForm";
@@ -11,18 +12,11 @@ const notoSans = Noto_Sans_JP({
   variable: "--font-noto-sans",
 });
 
-const skills = [
-  { ja: "グラフィックデザイン", en: "Graphic Design" },
-  { ja: "アートディレクション", en: "Art Direction" },
-  { ja: "ブランディング", en: "Branding" },
-  { ja: "編集・コピーライティング", en: "Editorial / Copywriting" },
-  { ja: "写真撮影", en: "Photography" },
-  { ja: "SNS / 広報設計", en: "SNS / PR" },
-  { ja: "動画・YouTube制作", en: "Video" },
-];
-
-export default function Home() {
+export default async function Home({ searchParams }: { searchParams: Promise<{ category?: string | string[] }> }) {
   const projects = getProjects();
+  const sp = await searchParams;
+  const catParam = typeof sp.category === "string" ? sp.category : null;
+  const activeCategory = CATEGORIES.some((c) => c.id === catParam) ? catParam : null;
   return (
     <div className={`${notoSans.variable}`} style={{ fontFamily: "'Optima', 'Optima Nova', Candara, var(--font-noto-sans), sans-serif" }}>
 
@@ -66,7 +60,7 @@ export default function Home() {
           <h2 className="text-xs font-light tracking-widest" style={{ color: "#888", letterSpacing: "0.12em" }}>WORKS</h2>
           <span className="text-xs font-light" style={{ color: "#aaa" }}>{projects.length} works</span>
         </div>
-        <WorksGrid projects={projects} />
+        <WorksGrid projects={projects} initialCategory={activeCategory} />
       </section>
 
       {/* About */}
@@ -91,12 +85,13 @@ export default function Home() {
             <p className="text-xs font-light tracking-widest mb-5"
               style={{ color: "rgba(255,255,255,0.6)", letterSpacing: "0.12em" }}>DISCIPLINES</p>
             <div>
-              {skills.map((skill) => (
-                <div key={skill.en} className="flex items-center justify-between py-2"
+              {CATEGORIES.map((cat) => (
+                <a key={cat.id} href={`/?category=${cat.id}#works`}
+                  className="flex items-center justify-between py-2 hover:opacity-60 transition-opacity"
                   style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>
-                  <span className="text-xs font-light text-white">{skill.ja}</span>
-                  <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.6)", fontSize: "10px" }}>{skill.en}</span>
-                </div>
+                  <span className="text-xs font-light text-white">{cat.ja}</span>
+                  <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.6)", fontSize: "10px" }}>{cat.en}</span>
+                </a>
               ))}
             </div>
           </div>
