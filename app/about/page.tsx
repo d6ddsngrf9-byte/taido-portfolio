@@ -9,7 +9,7 @@ const notoSans = Noto_Sans_JP({
 
 export default function About() {
   return (
-    <div className={`${notoSans.variable}`} style={{ background: "white", fontFamily: "'Optima', 'Optima Nova', Candara, var(--font-noto-sans), sans-serif" }}>
+    <div className={`${notoSans.variable}`} style={{ background: "var(--paper)", fontFamily: "'Optima', 'Optima Nova', Candara, var(--font-noto-sans), sans-serif" }}>
 
       <Nav activeLink="about" />
 

@@ -23,7 +23,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
       <Nav />
 
       {/* Hero */}
-      <section style={{ background: "white" }} className="px-6 md:px-10 pt-14 pb-14">
+      <section style={{ background: "var(--paper)" }} className="px-6 md:px-10 pt-14 pb-14">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1
@@ -54,7 +54,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
       </section>
 
       {/* Works */}
-      <section id="works" style={{ background: "white", borderTop: "1px solid #e0e0e0" }}>
+      <section id="works" style={{ background: "var(--paper)", borderTop: "1px solid #e0e0e0" }}>
         <div className="px-6 md:px-10 py-4 flex items-center justify-between"
           style={{ borderBottom: "1px solid #e0e0e0" }}>
           <h2 className="text-xs font-light tracking-widest" style={{ color: "#3a5545", letterSpacing: "0.12em" }}>WORKS</h2>
@@ -64,7 +64,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
       </section>
 
       {/* About */}
-      <section id="about" style={{ background: "white", borderTop: "1px solid #e0e0e0" }}
+      <section id="about" style={{ background: "var(--paper)", borderTop: "1px solid #e0e0e0" }}
         className="px-6 md:px-10 py-16">
         <h2 className="text-xs font-light tracking-widest mb-10"
           style={{ color: "#3a5545", letterSpacing: "0.12em" }}>ABOUT</h2>
@@ -99,7 +99,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
       </section>
 
       {/* Contact */}
-      <section id="contact" style={{ background: "white", borderTop: "1px solid #e0e0e0" }}
+      <section id="contact" style={{ background: "var(--paper)", borderTop: "1px solid #e0e0e0" }}
         className="px-6 md:px-10 py-16">
         <h2 className="text-xs font-light tracking-widest mb-10" style={{ color: "#3a5545", letterSpacing: "0.12em" }}>CONTACT</h2>
         <div className="grid md:grid-cols-2 gap-16">
@@ -143,7 +143,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
       </section>
 
       {/* Footer */}
-      <footer style={{ background: "white", borderTop: "1px solid #e0e0e0" }}
+      <footer style={{ background: "var(--paper)", borderTop: "1px solid #e0e0e0" }}
         className="px-6 md:px-10 py-4 flex items-center justify-between">
         <span className="text-xs font-light" style={{ color: "#aaa", fontSize: "10px" }}>
           © 2026 taido.design

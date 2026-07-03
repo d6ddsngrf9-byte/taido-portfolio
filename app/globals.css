@@ -6,6 +6,8 @@
   --moss-light: #5e7249;
   --cream: #f5f3ee;
   --ink: #1a1a1a;
+  /* ページ全体のうっすらベージュ背景 */
+  --paper: #f7f4ee;
 }
 
 @theme inline {
@@ -16,6 +18,6 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--paper);
   color: var(--foreground);
 }

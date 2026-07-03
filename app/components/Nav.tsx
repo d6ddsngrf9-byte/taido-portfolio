@@ -16,7 +16,7 @@ export default function Nav({ activeLink }: NavProps) {
 
   return (
     <>
-      <nav style={{ background: "white", borderBottom: "1px solid #e0e0e0", position: "fixed", top: 0, left: 0, right: 0, zIndex: 50 }}
+      <nav style={{ background: "var(--paper)", borderBottom: "1px solid #e0e0e0", position: "fixed", top: 0, left: 0, right: 0, zIndex: 50 }}
         className="px-6 md:px-10 h-20 flex items-center justify-between">
 
         <Link href="/" aria-label="taido.design" className="block">
@@ -71,7 +71,7 @@ export default function Nav({ activeLink }: NavProps) {
         {/* Mobile menu */}
         {open && (
           <div className="md:hidden absolute top-full left-0 right-0 z-50 flex flex-col gap-0"
-            style={{ background: "white", borderTop: "1px solid #eee", borderBottom: "1px solid #e0e0e0" }}>
+            style={{ background: "var(--paper)", borderTop: "1px solid #eee", borderBottom: "1px solid #e0e0e0" }}>
             {[
               { href: "/#works", label: "Works", key: "works" },
               { href: "/about", label: "About", key: "about" },
