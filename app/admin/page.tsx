@@ -134,17 +134,47 @@ export default function AdminPage() {
             <input name="id" style={inputStyle} placeholder="branding-musubi" pattern="[a-zA-Z0-9-]*" />
           </label>
 
-          <label style={labelStyle}>
-            画像（複数可）
+          <div>
+            <p style={{ ...labelStyle, marginBottom: '8px' }}>画像（複数可）</p>
+            <label
+              htmlFor="images-input"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px',
+                width: '100%',
+                minHeight: '150px',
+                padding: '28px 16px',
+                border: '2px dashed #cbd2c6',
+                borderRadius: '8px',
+                background: '#faf9f6',
+                cursor: 'pointer',
+                color: '#3a5545',
+                textAlign: 'center',
+              }}
+            >
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3a5545" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 15V4" />
+                <path d="M8 8l4-4 4 4" />
+                <path d="M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3" />
+              </svg>
+              <span style={{ fontSize: '14px', letterSpacing: '0.04em' }}>
+                {previews.length > 0 ? `${previews.length}枚 選択中（変更するには再クリック）` : 'クリックして画像を選択'}
+              </span>
+              <span style={{ fontSize: '11px', color: '#999' }}>複数選択できます</span>
+            </label>
             <input
+              id="images-input"
               name="images"
               type="file"
               multiple
               accept="image/*"
               onChange={handleImageChange}
-              style={{ marginTop: '8px', fontSize: '12px', color: '#555' }}
+              style={{ display: 'none' }}
             />
-          </label>
+          </div>
 
           {previews.length > 0 && (
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
