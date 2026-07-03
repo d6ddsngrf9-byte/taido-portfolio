@@ -20,4 +20,6 @@
 body {
   background: var(--paper);
   color: var(--foreground);
+  /* 日本語の約物・かなのアキを詰める（・ 、 。など）。英数字は影響なし */
+  font-feature-settings: "palt";
 }
