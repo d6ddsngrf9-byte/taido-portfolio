@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { addWork } from './actions';
+import { addWork, verifyPassword } from './actions';
 import { CATEGORIES } from '@/lib/categories';
 
 export default function AdminPage() {
@@ -15,9 +15,11 @@ export default function AdminPage() {
 
   const fontStyle = { fontFamily: "'Optima', 'Optima Nova', Candara, sans-serif" };
 
-  const handlePwSubmit = (e: React.FormEvent) => {
+  const handlePwSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (pwInput === 'T32j4ghb') {
+    setPwError('');
+    const res = await verifyPassword(pwInput);
+    if (res.ok) {
       setAuthed(true);
     } else {
       setPwError('パスワードが違います');
@@ -35,7 +37,7 @@ export default function AdminPage() {
     setSubmitting(true);
     setResult(null);
     const fd = new FormData(e.currentTarget);
-    fd.set('password', 'T32j4ghb');
+    fd.set('password', pwInput);
     const res = await addWork(fd);
     setResult(res);
     setSubmitting(false);
@@ -125,7 +127,10 @@ export default function AdminPage() {
           </button>
 
           {result?.success && (
-            <p style={{ fontSize: '12px', color: '#3a5545' }}>登録しました（id: {result.id}）</p>
+            <p style={{ fontSize: '12px', color: '#3a5545', lineHeight: 1.7 }}>
+              登録しました（id: {result.id}）<br />
+              サイトへの反映まで約1分お待ちください（自動で再ビルドされます）。
+            </p>
           )}
           {result?.error && (
             <p style={{ fontSize: '12px', color: '#c00' }}>{result.error}</p>
