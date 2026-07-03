@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Noto_Sans_JP } from "next/font/google";
-import { projects } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 import Nav from "@/app/components/Nav";
 
 const notoSans = Noto_Sans_JP({
@@ -20,6 +20,7 @@ const skills = [
 ];
 
 export default function Home() {
+  const projects = getProjects();
   return (
     <div className={`${notoSans.variable}`} style={{ fontFamily: "'Optima', 'Optima Nova', Candara, var(--font-noto-sans), sans-serif" }}>
 
@@ -62,14 +63,14 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2" style={{ borderBottom: "1px solid #e0e0e0" }}>
           {projects.map((project) => (
-            <div key={project.id} className="group" style={{ borderRight: "1px solid #e0e0e0", borderBottom: "1px solid #e0e0e0", marginRight: "-1px" }}>
+            <a key={project.id} href={`/works/${project.id}`} className="group" style={{ borderRight: "1px solid #e0e0e0", borderBottom: "1px solid #e0e0e0", marginRight: "-1px", display: "block", textDecoration: "none" }}>
               <div
                 className="w-full relative overflow-hidden"
                 style={{ aspectRatio: "4 / 3", background: "#f0f0f0" }}
               >
-                {project.image ? (
+                {project.coverImage ? (
                   <Image
-                    src={project.image}
+                    src={project.coverImage}
                     alt={project.client}
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -90,7 +91,7 @@ export default function Home() {
                   <span style={{ color: "#666" }}>{project.description}</span>
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
@@ -133,7 +134,7 @@ export default function Home() {
       <section id="contact" style={{ background: "white" }}
         className="px-6 md:px-10 py-16">
         <h2 className="text-xs font-light tracking-widest mb-10" style={{ color: "#888", letterSpacing: "0.12em" }}>CONTACT</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div>
             <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Address</p>
             <p className="text-xs font-light leading-loose" style={{ color: "#333" }}>
@@ -155,6 +156,24 @@ export default function Home() {
               className="text-xs font-light hover:opacity-50 transition-opacity"
               style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
               Instagram
+            </a>
+          </div>
+          <div>
+            <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Blog</p>
+            <a href="https://note.com/maedatoshiyuk1"
+              target="_blank" rel="noopener noreferrer"
+              className="text-xs font-light hover:opacity-50 transition-opacity"
+              style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+              note
+            </a>
+          </div>
+          <div>
+            <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Store</p>
+            <a href="https://madeastore.stores.jp/"
+              target="_blank" rel="noopener noreferrer"
+              className="text-xs font-light hover:opacity-50 transition-opacity"
+              style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+              madea store
             </a>
           </div>
         </div>

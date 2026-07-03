@@ -30,6 +30,8 @@ export default function Nav({ theme = "dark", activeLink }: NavProps) {
       <div className="hidden md:flex gap-6 text-xs font-light" style={{ color: textColor, letterSpacing: "0.08em" }}>
         <Link href="/#works" className="hover:opacity-100 transition-opacity" style={{ color: activeLink === "works" ? activeColor : textColor }}>Works</Link>
         <Link href="/about" className="hover:opacity-100 transition-opacity" style={{ color: activeLink === "about" ? activeColor : textColor }}>About</Link>
+        <a href="https://note.com/maedatoshiyuk1" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity" style={{ color: activeLink === "blog" ? activeColor : textColor }}>Blog</a>
+        <a href="https://madeastore.stores.jp/" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity" style={{ color: activeLink === "store" ? activeColor : textColor }}>Store</a>
         <Link href="/#contact" className="hover:opacity-100 transition-opacity" style={{ color: activeLink === "contact" ? activeColor : textColor }}>Contact</Link>
       </div>
 
@@ -60,6 +62,8 @@ export default function Nav({ theme = "dark", activeLink }: NavProps) {
           {[
             { href: "/#works", label: "Works", key: "works" },
             { href: "/about", label: "About", key: "about" },
+            { href: "https://note.com/maedatoshiyuk1", label: "Blog", key: "blog" },
+            { href: "https://madeastore.stores.jp/", label: "Store", key: "store" },
             { href: "/#contact", label: "Contact", key: "contact" },
           ].map((item) => (
             <Link key={item.key} href={item.href}
