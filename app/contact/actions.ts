@@ -19,7 +19,7 @@ export async function sendContact(formData: FormData) {
 
   try {
     await resend.emails.send({
-      from: 'taido.design <onboarding@resend.dev>',
+      from: 'taido.design <noreply@taido.design>',
       to: 'hello@taido.design',
       replyTo: email,
       subject: `[taido.design] ${name} さんからのお問い合わせ`,
