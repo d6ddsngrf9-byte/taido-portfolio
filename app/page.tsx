@@ -38,6 +38,9 @@ export default function Home() {
             >
               文脈を、<br />かたちに。
             </h1>
+            <p className="hidden md:block mt-5 font-light" style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.95rem", lineHeight: 1.9, letterSpacing: "0.03em" }}>
+              社会的意義や文脈を、<br />外に届く言葉・デザイン・写真・導線に変換する。
+            </p>
             <p className="mt-4 text-xs font-light" style={{ color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}>
               Designer / Art Director
             </p>
