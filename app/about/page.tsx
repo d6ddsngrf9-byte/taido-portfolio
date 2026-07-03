@@ -1,5 +1,5 @@
 import { Noto_Sans_JP } from "next/font/google";
-import Link from "next/link";
+import Nav from "@/app/components/Nav";
 
 const notoSans = Noto_Sans_JP({
   subsets: ["latin"],
@@ -9,18 +9,9 @@ const notoSans = Noto_Sans_JP({
 
 export default function About() {
   return (
-    <div className={`${notoSans.variable} font-[family-name:var(--font-noto-sans)]`} style={{ background: "white" }}>
+    <div className={`${notoSans.variable}`} style={{ background: "white", fontFamily: "'Optima', 'Optima Nova', Candara, var(--font-noto-sans), sans-serif" }}>
 
-      {/* Nav */}
-      <nav style={{ borderBottom: "1px solid #eee" }}
-        className="px-6 md:px-10 h-10 flex items-center justify-between">
-        <Link href="/" className="text-xs font-light" style={{ color: "#111", letterSpacing: "0.15em" }}>taido.design</Link>
-        <div className="flex gap-6 text-xs font-light" style={{ color: "#aaa", letterSpacing: "0.08em" }}>
-          <Link href="/#works" className="hover:text-black transition-colors">Works</Link>
-          <Link href="/about" className="hover:text-black transition-colors" style={{ color: "#111" }}>About</Link>
-          <Link href="/#contact" className="hover:text-black transition-colors">Contact</Link>
-        </div>
-      </nav>
+      <Nav theme="light" activeLink="about" />
 
       <main className="px-6 md:px-10 py-16 max-w-4xl">
 
