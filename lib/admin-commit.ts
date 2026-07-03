@@ -71,6 +71,10 @@ export async function commitNewWork(meta: WorkMeta, imageBuffers: Buffer[]) {
     `/repos/${OWNER}/${REPO}/contents/content/works.json?ref=${BRANCH}`
   );
   const works = JSON.parse(Buffer.from(fileMeta.content, 'base64').toString('utf-8')) as unknown[];
+  // 同じIDが既にあれば拒否（連続送信などによる二重登録を防ぐ）
+  if ((works as { id?: string }[]).some((w) => w?.id === meta.id)) {
+    throw new Error(`ID「${meta.id}」は既に使われています。別のIDにしてください。`);
+  }
   works.push({
     id: meta.id,
     client: meta.client,
