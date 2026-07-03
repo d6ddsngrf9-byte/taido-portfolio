@@ -25,5 +25,14 @@
       "/photobook-embroidery-detail.jpg"
     ],
     "coverImage": "/photobook-embroidery-detail.jpg"
+  },
+  {
+    "id": "hamanoyurina-itohirosato-youkisou",
+    "client": "ハマノユリナ&伊藤寛哲",
+    "year": "2024",
+    "description": "フライヤーデザイン",
+    "category": "graphic-design",
+    "images": [],
+    "coverImage": ""
   }
 ]
