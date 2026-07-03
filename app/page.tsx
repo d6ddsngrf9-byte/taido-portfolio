@@ -114,14 +114,6 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Mail</p>
-              <a href="mailto:hello@taido.design"
-                className="text-xs font-light hover:opacity-50 transition-opacity"
-                style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-                hello@taido.design
-              </a>
-            </div>
-            <div>
               <p className="text-xs font-light mb-2" style={{ color: "#888", letterSpacing: "0.08em" }}>Follow</p>
               <a href="https://www.instagram.com/maedatoshiyuk1_works/"
                 target="_blank" rel="noopener noreferrer"
@@ -145,7 +137,7 @@ export default function Home() {
                 target="_blank" rel="noopener noreferrer"
                 className="text-xs font-light hover:opacity-50 transition-opacity"
                 style={{ color: "#111", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-                madea store
+                made a store
               </a>
             </div>
           </div>
