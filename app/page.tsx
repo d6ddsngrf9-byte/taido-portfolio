@@ -20,22 +20,22 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
   return (
     <div className={`${notoSans.variable}`} style={{ fontFamily: "'Optima', 'Optima Nova', Candara, var(--font-noto-sans), sans-serif" }}>
 
-      <Nav theme="dark" />
+      <Nav />
 
       {/* Hero */}
-      <section style={{ background: "#3a5545" }} className="px-6 md:px-10 pt-14 pb-14">
+      <section style={{ background: "white" }} className="px-6 md:px-10 pt-14 pb-14">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1
-              className="font-light text-white"
-              style={{ fontSize: "clamp(2rem, 4.5vw, 4rem)", letterSpacing: "-0.01em", lineHeight: 1.3 }}
+              className="font-light"
+              style={{ color: "#3a5545", fontSize: "clamp(2rem, 4.5vw, 4rem)", letterSpacing: "-0.01em", lineHeight: 1.3 }}
             >
               文脈を、かたちに。
             </h1>
-            <p className="mt-5 font-light" style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.95rem", lineHeight: 1.9, letterSpacing: "0.03em" }}>
+            <p className="mt-5 font-light" style={{ color: "#555", fontSize: "0.95rem", lineHeight: 1.9, letterSpacing: "0.03em" }}>
               社会的意義や文脈を、外に届く<br />言葉・デザイン・写真・導線に変換する。
             </p>
-            <p className="mt-4 text-xs font-light" style={{ color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}>
+            <p className="mt-4 text-xs font-light" style={{ color: "#888", letterSpacing: "0.05em" }}>
               Designer / Art Director
             </p>
           </div>
@@ -54,43 +54,43 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
       </section>
 
       {/* Works */}
-      <section id="works" style={{ background: "white" }}>
+      <section id="works" style={{ background: "white", borderTop: "1px solid #e0e0e0" }}>
         <div className="px-6 md:px-10 py-4 flex items-center justify-between"
           style={{ borderBottom: "1px solid #e0e0e0" }}>
-          <h2 className="text-xs font-light tracking-widest" style={{ color: "#888", letterSpacing: "0.12em" }}>WORKS</h2>
+          <h2 className="text-xs font-light tracking-widest" style={{ color: "#3a5545", letterSpacing: "0.12em" }}>WORKS</h2>
           <span className="text-xs font-light" style={{ color: "#aaa" }}>{projects.length} works</span>
         </div>
         <WorksGrid projects={projects} initialCategory={activeCategory} />
       </section>
 
       {/* About */}
-      <section id="about" style={{ background: "#3a5545", color: "white" }}
+      <section id="about" style={{ background: "white", borderTop: "1px solid #e0e0e0" }}
         className="px-6 md:px-10 py-16">
         <h2 className="text-xs font-light tracking-widest mb-10"
-          style={{ color: "rgba(255,255,255,0.6)", letterSpacing: "0.12em" }}>ABOUT</h2>
-        <div className="grid md:grid-cols-2 gap-12">
+          style={{ color: "#3a5545", letterSpacing: "0.12em" }}>ABOUT</h2>
+        <div className="grid md:grid-cols-2 gap-12 items-stretch">
           <div>
-            <p className="font-light text-white mb-6"
-              style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)", letterSpacing: "-0.01em", lineHeight: 1.5 }}>
+            <p className="font-light mb-6"
+              style={{ color: "#111", fontSize: "clamp(1.4rem, 2.5vw, 2rem)", letterSpacing: "-0.01em", lineHeight: 1.5 }}>
               届く言葉と、<br />残るかたち。
             </p>
-            <p className="text-xs font-light leading-loose" style={{ color: "rgba(255,255,255,0.8)", lineHeight: 2 }}>
+            <p className="text-xs font-light leading-loose" style={{ color: "#555", lineHeight: 2 }}>
               社会的意義や文脈を、外に届く言葉・デザイン・写真・導線に変換する。
               地域・福祉・文化・出版・個人店・小規模事業者を主な顧客として、
               グラフィックデザインからブランディング、写真撮影、SNS広報設計まで
               一貫して手がける。
             </p>
           </div>
-          <div>
+          <div className="flex flex-col">
             <p className="text-xs font-light tracking-widest mb-5"
-              style={{ color: "rgba(255,255,255,0.6)", letterSpacing: "0.12em" }}>DISCIPLINES</p>
-            <div>
+              style={{ color: "#3a5545", letterSpacing: "0.12em" }}>DISCIPLINES</p>
+            <div className="flex-1 flex flex-col" style={{ borderTop: "1px solid #e0e0e0" }}>
               {CATEGORIES.map((cat) => (
                 <a key={cat.id} href={`/?category=${cat.id}#works`}
-                  className="flex items-center justify-between py-2 hover:opacity-60 transition-opacity"
-                  style={{ borderBottom: "1px solid rgba(255,255,255,0.15)" }}>
-                  <span className="text-xs font-light text-white">{cat.ja}</span>
-                  <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.6)", fontSize: "10px" }}>{cat.en}</span>
+                  className="flex-1 flex items-center justify-between hover:opacity-60 transition-opacity"
+                  style={{ borderBottom: "1px solid #e0e0e0", minHeight: "38px" }}>
+                  <span className="text-xs font-light" style={{ color: "#111" }}>{cat.ja}</span>
+                  <span className="text-xs font-light" style={{ color: "#999", fontSize: "10px" }}>{cat.en}</span>
                 </a>
               ))}
             </div>
@@ -99,9 +99,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
       </section>
 
       {/* Contact */}
-      <section id="contact" style={{ background: "white" }}
+      <section id="contact" style={{ background: "white", borderTop: "1px solid #e0e0e0" }}
         className="px-6 md:px-10 py-16">
-        <h2 className="text-xs font-light tracking-widest mb-10" style={{ color: "#888", letterSpacing: "0.12em" }}>CONTACT</h2>
+        <h2 className="text-xs font-light tracking-widest mb-10" style={{ color: "#3a5545", letterSpacing: "0.12em" }}>CONTACT</h2>
         <div className="grid md:grid-cols-2 gap-16">
           <ContactForm />
           <div className="flex flex-col gap-6">
@@ -143,12 +143,12 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
       </section>
 
       {/* Footer */}
-      <footer style={{ background: "#3a4a2c" }}
+      <footer style={{ background: "white", borderTop: "1px solid #e0e0e0" }}
         className="px-6 md:px-10 py-4 flex items-center justify-between">
-        <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.5)", fontSize: "10px" }}>
+        <span className="text-xs font-light" style={{ color: "#aaa", fontSize: "10px" }}>
           © 2026 taido.design
         </span>
-        <span className="text-xs font-light" style={{ color: "rgba(255,255,255,0.5)", fontSize: "10px" }}>
+        <span className="text-xs font-light" style={{ color: "#aaa", fontSize: "10px" }}>
           Osaka, Japan
         </span>
       </footer>

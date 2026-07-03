@@ -11,7 +11,7 @@ export default function About() {
   return (
     <div className={`${notoSans.variable}`} style={{ background: "white", fontFamily: "'Optima', 'Optima Nova', Candara, var(--font-noto-sans), sans-serif" }}>
 
-      <Nav theme="light" activeLink="about" />
+      <Nav activeLink="about" />
 
       <main className="px-6 md:px-10 py-16 max-w-5xl">
 

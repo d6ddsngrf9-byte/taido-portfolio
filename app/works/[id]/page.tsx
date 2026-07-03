@@ -32,7 +32,7 @@ export default async function WorkPage({ params }: { params: Promise<{ id: strin
       className={notoSans.variable}
       style={{ fontFamily: "'Optima', 'Optima Nova', Candara, var(--font-noto-sans), sans-serif", background: 'white', minHeight: '100vh' }}
     >
-      <Nav theme="light" />
+      <Nav />
 
       <main className="px-6 md:px-10 py-12 max-w-5xl">
         {/* Meta */}
