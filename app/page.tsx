@@ -82,8 +82,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
             </p>
           </div>
           <div className="flex flex-col">
-            <p className="text-xs font-light tracking-widest mb-5"
-              style={{ color: "#3a5545", letterSpacing: "0.12em" }}>DISCIPLINES</p>
+            <p className="text-xs font-light mb-5"
+              style={{ color: "#3a5545", letterSpacing: "0.03em" }}>Disciplines</p>
             <div className="flex-1 flex flex-col" style={{ borderTop: "1px solid #e0e0e0" }}>
               {CATEGORIES.map((cat) => (
                 <a key={cat.id} href={`/?category=${cat.id}#works`}
