@@ -4,6 +4,24 @@ import { useState, useRef } from 'react';
 import { addWork, verifyPassword } from './actions';
 import { CATEGORIES } from '@/lib/categories';
 
+// 画像をブラウザ側で長辺1600px・JPEG(0.8)に圧縮する（アップロード前に軽量化）
+async function resizeImage(file: File, maxDim = 1600, quality = 0.8): Promise<Blob> {
+  const bitmap = await createImageBitmap(file, { imageOrientation: 'from-image' });
+  const scale = Math.min(1, maxDim / Math.max(bitmap.width, bitmap.height));
+  const w = Math.max(1, Math.round(bitmap.width * scale));
+  const h = Math.max(1, Math.round(bitmap.height * scale));
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('canvasが使えません');
+  ctx.drawImage(bitmap, 0, 0, w, h);
+  bitmap.close();
+  const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/jpeg', quality));
+  if (!blob) throw new Error('画像の変換に失敗しました');
+  return blob;
+}
+
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [pwInput, setPwInput] = useState('');
@@ -34,16 +52,30 @@ export default function AdminPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setSubmitting(true);
     setResult(null);
-    const fd = new FormData(e.currentTarget);
-    fd.set('password', pwInput);
-    const res = await addWork(fd);
-    setResult(res);
-    setSubmitting(false);
-    if (res.success) {
-      formRef.current?.reset();
-      setPreviews([]);
+    try {
+      const fd = new FormData(form);
+      fd.set('password', pwInput);
+      // 画像はブラウザ側で1600pxに圧縮してから送る（アップロード容量制限を回避）
+      fd.delete('images');
+      const input = form.querySelector('input[name="images"]') as HTMLInputElement | null;
+      for (const file of Array.from(input?.files ?? [])) {
+        const resized = await resizeImage(file);
+        const base = file.name.replace(/\.[^.]+$/, '') || 'image';
+        fd.append('images', resized, `${base}.jpg`);
+      }
+      const res = await addWork(fd);
+      setResult(res);
+      if (res.success) {
+        form.reset();
+        setPreviews([]);
+      }
+    } catch (err) {
+      setResult({ error: '送信に失敗しました：' + (err instanceof Error ? err.message : String(err)) });
+    } finally {
+      setSubmitting(false);
     }
   };
 
