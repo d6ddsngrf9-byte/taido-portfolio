@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { getProjects } from '@/lib/projects';
+import type { Category } from '@/lib/categories';
 
 export async function addWork(formData: FormData) {
   const password = formData.get('password') as string;
@@ -13,7 +14,7 @@ export async function addWork(formData: FormData) {
   const client = (formData.get('client') as string).trim();
   const year = (formData.get('year') as string).trim();
   const description = (formData.get('description') as string).trim();
-  const category = (formData.get('category') as string).trim() || 'graphic-design';
+  const category = ((formData.get('category') as string).trim() || 'graphic-design') as Category;
   const id = (formData.get('id') as string).trim() ||
     `${client}-${Date.now()}`.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase();
 
