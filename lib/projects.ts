@@ -1,11 +1,15 @@
 import fs from 'fs';
 import path from 'path';
+import type { Category } from './categories';
+export type { Category } from './categories';
+export { CATEGORIES } from './categories';
 
 export type Project = {
   id: string;
   client: string;
   year: string;
   description: string;
+  category: Category;
   images: string[];
   coverImage: string;
 };

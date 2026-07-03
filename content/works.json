@@ -4,6 +4,7 @@
     "client": "むすびばな",
     "year": "2024",
     "description": "ロゴ・名刺・パンフレットデザイン",
+    "category": "branding",
     "images": ["/musubibana-card-close.jpg"],
     "coverImage": "/musubibana-card-close.jpg"
   },
@@ -12,6 +13,7 @@
     "client": "むすびばな",
     "year": "2024",
     "description": "冊子・編集デザイン",
+    "category": "editorial",
     "images": ["/musubibana-pamphlet-cover.jpg"],
     "coverImage": "/musubibana-pamphlet-cover.jpg"
   },
@@ -20,6 +22,7 @@
     "client": "（仮）クライアント名",
     "year": "2024",
     "description": "写真撮影",
+    "category": "photography",
     "images": ["/photobook-embroidery-detail.jpg"],
     "coverImage": "/photobook-embroidery-detail.jpg"
   },
@@ -28,6 +31,7 @@
     "client": "（仮）クライアント名",
     "year": "2024",
     "description": "フライヤーデザイン・広報設計",
+    "category": "sns-pr",
     "images": ["/flyer-busstopcafe.png"],
     "coverImage": "/flyer-busstopcafe.png"
   },
@@ -36,6 +40,7 @@
     "client": "（仮）クライアント名",
     "year": "2024",
     "description": "動画・映像制作",
+    "category": "video",
     "images": [],
     "coverImage": ""
   },
@@ -44,6 +49,7 @@
     "client": "（仮）クライアント名",
     "year": "2024",
     "description": "コピーライティング・広報",
+    "category": "editorial",
     "images": ["/flyer-yokisokan.jpg"],
     "coverImage": "/flyer-yokisokan.jpg"
   },
@@ -52,6 +58,7 @@
     "client": "（仮）クライアント名",
     "year": "2024",
     "description": "アートディレクション・フライヤー",
+    "category": "art-direction",
     "images": ["/flyer-kyomei.png"],
     "coverImage": "/flyer-kyomei.png"
   },
@@ -60,6 +67,7 @@
     "client": "（仮）クライアント名",
     "year": "2024",
     "description": "フライヤー・PR設計",
+    "category": "graphic-design",
     "images": ["/flyer-planetarium.jpg"],
     "coverImage": "/flyer-planetarium.jpg"
   }

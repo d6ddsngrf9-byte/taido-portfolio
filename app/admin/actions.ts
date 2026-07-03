@@ -13,6 +13,7 @@ export async function addWork(formData: FormData) {
   const client = (formData.get('client') as string).trim();
   const year = (formData.get('year') as string).trim();
   const description = (formData.get('description') as string).trim();
+  const category = (formData.get('category') as string).trim() || 'graphic-design';
   const id = (formData.get('id') as string).trim() ||
     `${client}-${Date.now()}`.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase();
 
@@ -40,6 +41,7 @@ export async function addWork(formData: FormData) {
     client,
     year,
     description,
+    category,
     images: savedImages,
     coverImage: savedImages[0] ?? '',
   };

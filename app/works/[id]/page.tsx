@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Noto_Sans_JP } from 'next/font/google';
-import { getProject, getProjects } from '@/lib/projects';
+import { getProject, getProjects, CATEGORIES } from '@/lib/projects';
 import Nav from '@/app/components/Nav';
 import Link from 'next/link';
 
@@ -20,6 +20,13 @@ export default async function WorkPage({ params }: { params: Promise<{ id: strin
   const project = getProject(id);
   if (!project) notFound();
 
+  const all = getProjects();
+  const sameCategory = all.filter((p) => p.category === project.category);
+  const idx = sameCategory.findIndex((p) => p.id === id);
+  const prev = idx > 0 ? sameCategory[idx - 1] : null;
+  const next = idx < sameCategory.length - 1 ? sameCategory[idx + 1] : null;
+  const cat = CATEGORIES.find((c) => c.id === project.category);
+
   return (
     <div
       className={notoSans.variable}
@@ -30,6 +37,11 @@ export default async function WorkPage({ params }: { params: Promise<{ id: strin
       <main className="px-6 md:px-10 py-12 max-w-5xl">
         {/* Meta */}
         <div className="mb-10" style={{ borderBottom: '1px solid #eee', paddingBottom: '1.5rem' }}>
+          {cat && (
+            <p className="text-xs font-light mb-2" style={{ color: '#3a5545', letterSpacing: '0.1em' }}>
+              {cat.ja}
+            </p>
+          )}
           <p className="text-xs font-light mb-1" style={{ color: '#aaa', letterSpacing: '0.08em' }}>
             {project.year}
           </p>
@@ -62,9 +74,32 @@ export default async function WorkPage({ params }: { params: Promise<{ id: strin
           </div>
         )}
 
+        {/* Prev / Next within same category */}
+        {(prev || next) && (
+          <div className="mt-12 flex items-center justify-between"
+            style={{ borderTop: '1px solid #eee', paddingTop: '1.5rem' }}>
+            <div>
+              {prev && (
+                <Link href={`/works/${prev.id}`} style={{ textDecoration: 'none' }}>
+                  <p className="text-xs font-light" style={{ color: '#aaa', letterSpacing: '0.06em', marginBottom: '2px' }}>← prev</p>
+                  <p className="text-xs font-light" style={{ color: '#333' }}>{prev.client}</p>
+                </Link>
+              )}
+            </div>
+            <div className="text-right">
+              {next && (
+                <Link href={`/works/${next.id}`} style={{ textDecoration: 'none' }}>
+                  <p className="text-xs font-light" style={{ color: '#aaa', letterSpacing: '0.06em', marginBottom: '2px' }}>next →</p>
+                  <p className="text-xs font-light" style={{ color: '#333' }}>{next.client}</p>
+                </Link>
+              )}
+            </div>
+          </div>
+        )}
+
         {/* Back */}
-        <div className="mt-12">
-          <Link href="/#works" className="text-xs font-light" style={{ color: '#888', letterSpacing: '0.08em', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+        <div className="mt-8">
+          <Link href="/#works" className="text-xs font-light" style={{ color: '#aaa', letterSpacing: '0.08em', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
             ← Works に戻る
           </Link>
         </div>

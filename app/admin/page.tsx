@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { addWork } from './actions';
+import { CATEGORIES } from '@/lib/categories';
 
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
@@ -83,6 +84,15 @@ export default function AdminPage() {
           <label style={labelStyle}>
             やったこと <span style={{ color: '#c00' }}>*</span>
             <textarea name="description" required style={{ ...inputStyle, height: '80px', resize: 'vertical' }} placeholder="ロゴ・名刺・パンフレットデザイン" />
+          </label>
+
+          <label style={labelStyle}>
+            カテゴリ <span style={{ color: '#c00' }}>*</span>
+            <select name="category" required style={inputStyle}>
+              {CATEGORIES.map((cat) => (
+                <option key={cat.id} value={cat.id}>{cat.ja}</option>
+              ))}
+            </select>
           </label>
 
           <label style={labelStyle}>

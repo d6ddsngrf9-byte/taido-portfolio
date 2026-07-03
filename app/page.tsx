@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Noto_Sans_JP } from "next/font/google";
 import { getProjects } from "@/lib/projects";
 import Nav from "@/app/components/Nav";
+import WorksGrid from "@/app/components/WorksGrid";
 
 const notoSans = Noto_Sans_JP({
   subsets: ["latin"],
@@ -61,39 +62,7 @@ export default function Home() {
           <h2 className="text-xs font-light tracking-widest" style={{ color: "#888", letterSpacing: "0.12em" }}>WORKS</h2>
           <span className="text-xs font-light" style={{ color: "#aaa" }}>{projects.length} works</span>
         </div>
-        <div className="grid grid-cols-2" style={{ borderBottom: "1px solid #e0e0e0" }}>
-          {projects.map((project) => (
-            <a key={project.id} href={`/works/${project.id}`} className="group" style={{ borderRight: "1px solid #e0e0e0", borderBottom: "1px solid #e0e0e0", marginRight: "-1px", display: "block", textDecoration: "none" }}>
-              <div
-                className="w-full relative overflow-hidden"
-                style={{ aspectRatio: "4 / 3", background: "#f0f0f0" }}
-              >
-                {project.coverImage ? (
-                  <Image
-                    src={project.coverImage}
-                    alt={project.client}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-103"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-xs font-light" style={{ color: "#bbb", fontSize: "10px" }}>
-                      {project.description}
-                    </span>
-                  </div>
-                )}
-              </div>
-              <div className="px-4 pt-2 pb-5">
-                <p className="font-light truncate" style={{ fontSize: "10px", letterSpacing: "0.03em" }}>
-                  <span style={{ color: "#888", marginRight: "0.6em" }}>{project.year}</span>
-                  <span style={{ color: "#111", marginRight: "0.6em" }}>{project.client}</span>
-                  <span style={{ color: "#666" }}>{project.description}</span>
-                </p>
-              </div>
-            </a>
-          ))}
-        </div>
+        <WorksGrid projects={projects} />
       </section>
 
       {/* About */}
