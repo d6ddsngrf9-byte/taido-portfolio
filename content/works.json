@@ -25,58 +25,5 @@
       "/photobook-embroidery-detail.jpg"
     ],
     "coverImage": "/photobook-embroidery-detail.jpg"
-  },
-  {
-    "id": "sns",
-    "client": "（仮）クライアント名",
-    "year": "2024",
-    "description": "フライヤーデザイン・広報設計",
-    "category": "sns-pr",
-    "images": [
-      "/flyer-busstopcafe.png"
-    ],
-    "coverImage": "/flyer-busstopcafe.png"
-  },
-  {
-    "id": "video",
-    "client": "（仮）クライアント名",
-    "year": "2024",
-    "description": "動画・映像制作",
-    "category": "video",
-    "images": [],
-    "coverImage": ""
-  },
-  {
-    "id": "copywriting",
-    "client": "（仮）クライアント名",
-    "year": "2024",
-    "description": "コピーライティング・広報",
-    "category": "editorial",
-    "images": [
-      "/flyer-yokisokan.jpg"
-    ],
-    "coverImage": "/flyer-yokisokan.jpg"
-  },
-  {
-    "id": "artdirection",
-    "client": "（仮）クライアント名",
-    "year": "2024",
-    "description": "アートディレクション・フライヤー",
-    "category": "art-direction",
-    "images": [
-      "/flyer-kyomei.png"
-    ],
-    "coverImage": "/flyer-kyomei.png"
-  },
-  {
-    "id": "crowdfunding",
-    "client": "（仮）クライアント名",
-    "year": "2024",
-    "description": "フライヤー・PR設計",
-    "category": "graphic-design",
-    "images": [
-      "/flyer-planetarium.jpg"
-    ],
-    "coverImage": "/flyer-planetarium.jpg"
   }
 ]
