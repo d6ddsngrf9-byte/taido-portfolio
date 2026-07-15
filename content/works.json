@@ -1,41 +1,52 @@
 [
   {
-    "id": "branding-vi",
+    "slug": "musubibana",
+    "title": "むすびばな",
+    "year": "2026",
     "client": "むすびばな",
-    "year": "2026",
-    "description": "ロゴ・名刺・パンフレット・編集デザイン",
-    "category": "branding",
+    "categories": ["branding", "editorial"],
+    "services": ["ロゴデザイン", "名刺・ツール", "パンフレット", "エディトリアル", "コピーライティング"],
+    "lead": "ロゴ・名刺・パンフレット・編集まで一貫して手がけたブランディング。",
+    "thumbnail": { "src": "/musubibana-card-close.jpg", "alt": "むすびばなのロゴを配した名刺のクローズアップ" },
     "images": [
-      "/musubibana-card-close.jpg",
-      "/musubibana-card-flat.jpg",
-      "/musubibana-card-flat-2.jpg",
-      "/musubibana-pamphlet-cover.jpg",
-      "/musubibana-pamphlet-spread.jpg",
-      "/musubibana-pamphlet-inner.jpg"
+      { "src": "/musubibana-card-close.jpg", "alt": "むすびばなのロゴ（緑と赤の花のマーク）を配した名刺のクローズアップ" },
+      { "src": "/musubibana-card-flat.jpg", "alt": "むすびばなの名刺" },
+      { "src": "/musubibana-card-flat-2.jpg", "alt": "むすびばなの名刺（斜めのアングル）" },
+      { "src": "/musubibana-pamphlet-cover.jpg", "alt": "むすびばなのパンフレット表紙。子どもたちの写真とロゴ" },
+      { "src": "/musubibana-pamphlet-spread.jpg", "alt": "むすびばなパンフレットの見開き。使い方・設備・料金の紹介" },
+      { "src": "/musubibana-pamphlet-inner.jpg", "alt": "むすびばなパンフレットの見開き。オーナー紹介とロゴの由来" }
     ],
-    "coverImage": "/musubibana-card-close.jpg"
+    "featured": true,
+    "order": 1
   },
   {
-    "id": "photography",
+    "slug": "sumi-takeshi-photobook",
+    "title": "澄毅 写真集",
+    "year": "2026",
     "client": "澄毅",
-    "year": "2026",
-    "description": "写真集ディレクション・デザイン・造本設計",
-    "category": "graphic-design",
+    "categories": ["graphic-design"],
+    "services": ["アートディレクション", "写真集デザイン", "造本設計"],
+    "lead": "写真集のディレクション・デザイン・造本設計。",
+    "thumbnail": { "src": "/photobook-embroidery-detail.jpg", "alt": "澄毅の写真集の誌面ディテール。刺繍が施されたページ" },
     "images": [
-      "/photobook-embroidery-detail.jpg"
+      { "src": "/photobook-embroidery-detail.jpg", "alt": "澄毅の写真集の誌面ディテール。刺繍が施されたページ" }
     ],
-    "coverImage": "/photobook-embroidery-detail.jpg"
+    "featured": true,
+    "order": 2
   },
   {
-    "id": "hamanoyurina-itohirosato-youkisou",
-    "client": "ハマノユリナ&伊藤寛哲",
+    "slug": "hamanoyurina-itohirosato-youkisou",
+    "title": "ハマノユリナ&伊藤寛哲 コンサート",
     "year": "2024",
-    "description": "フライヤーデザイン",
-    "category": "graphic-design",
+    "client": "ハマノユリナ&伊藤寛哲",
+    "categories": ["graphic-design"],
+    "services": ["フライヤーデザイン"],
+    "lead": "コンサート「ときと共に」のフライヤーデザイン。",
+    "thumbnail": { "src": "/works/hamanoyurina-itohirosato-youkisou-1.jpg", "alt": "ハマノユリナ&伊藤寛哲コンサート「ときと共に」のフライヤー" },
     "images": [
-      "/works/hamanoyurina-itohirosato-youkisou-1.jpg",
-      "/works/hamanoyurina-itohirosato-youkisou-2.jpg"
+      { "src": "/works/hamanoyurina-itohirosato-youkisou-1.jpg", "alt": "ハマノユリナ&伊藤寛哲コンサート「ときと共に」のフライヤー" },
+      { "src": "/works/hamanoyurina-itohirosato-youkisou-2.jpg", "alt": "ハマノユリナ&伊藤寛哲コンサートのフライヤー（別カット）" }
     ],
-    "coverImage": "/works/hamanoyurina-itohirosato-youkisou-1.jpg"
+    "order": 3
   }
 ]

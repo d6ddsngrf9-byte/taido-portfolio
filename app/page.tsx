@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Noto_Sans_JP } from "next/font/google";
-import { getProjects } from "@/lib/projects";
+import { getWorks } from "@/lib/projects";
 import { CATEGORIES } from "@/lib/categories";
 import Nav from "@/app/components/Nav";
 import WorksGrid from "@/app/components/WorksGrid";
@@ -13,7 +13,7 @@ const notoSans = Noto_Sans_JP({
 });
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ category?: string | string[] }> }) {
-  const projects = getProjects();
+  const works = getWorks();
   const sp = await searchParams;
   const catParam = typeof sp.category === "string" ? sp.category : null;
   const activeCategory = CATEGORIES.some((c) => c.id === catParam) ? catParam : null;
@@ -58,9 +58,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ c
         <div className="px-6 md:px-10 py-4 flex items-center justify-between"
           style={{ borderBottom: "1px solid #e0e0e0" }}>
           <h2 className="text-xs font-light tracking-widest" style={{ color: "#3a5545", letterSpacing: "0.12em" }}>WORKS</h2>
-          <span className="text-xs font-light" style={{ color: "#aaa" }}>{projects.length} works</span>
+          <span className="text-xs font-light" style={{ color: "#aaa" }}>{works.length} works</span>
         </div>
-        <WorksGrid projects={projects} initialCategory={activeCategory} />
+        <WorksGrid works={works} initialCategory={activeCategory} />
       </section>
 
       {/* About */}

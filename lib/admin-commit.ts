@@ -7,10 +7,11 @@ const BRANCH = process.env.GITHUB_BRANCH || 'main';
 const API = 'https://api.github.com';
 
 export type WorkMeta = {
-  id: string;
+  slug: string;
+  title: string;
   client: string;
   year: string;
-  description: string;
+  lead: string;
   category: Category;
 };
 
@@ -54,16 +55,16 @@ async function optimize(buffer: Buffer): Promise<Buffer> {
 export async function commitNewWork(meta: WorkMeta, imageBuffers: Buffer[]) {
   if (!process.env.GITHUB_TOKEN) throw new Error('GITHUB_TOKEN未設定');
 
-  // 1. 画像を最適化して blob 候補に
-  const imagePaths: string[] = [];
+  // 1. 画像を最適化して blob 候補に（altは暫定でタイトル。詳細は後から編集）
+  const images: { src: string; alt: string }[] = [];
   const imageItems: { path: string; base64: string }[] = [];
   let i = 0;
   for (const buf of imageBuffers) {
     i += 1;
     const optimized = await optimize(buf);
-    const fileName = `${meta.id}-${i}.jpg`;
+    const fileName = `${meta.slug}-${i}.jpg`;
     imageItems.push({ path: `public/works/${fileName}`, base64: optimized.toString('base64') });
-    imagePaths.push(`/works/${fileName}`);
+    images.push({ src: `/works/${fileName}`, alt: meta.title });
   }
 
   // 2. 現在の works.json を取得して追記
@@ -71,18 +72,19 @@ export async function commitNewWork(meta: WorkMeta, imageBuffers: Buffer[]) {
     `/repos/${OWNER}/${REPO}/contents/content/works.json?ref=${BRANCH}`
   );
   const works = JSON.parse(Buffer.from(fileMeta.content, 'base64').toString('utf-8')) as unknown[];
-  // 同じIDが既にあれば拒否（連続送信などによる二重登録を防ぐ）
-  if ((works as { id?: string }[]).some((w) => w?.id === meta.id)) {
-    throw new Error(`ID「${meta.id}」は既に使われています。別のIDにしてください。`);
+  // 同じslugが既にあれば拒否（連続送信などによる二重登録を防ぐ）
+  if ((works as { slug?: string }[]).some((w) => w?.slug === meta.slug)) {
+    throw new Error(`slug「${meta.slug}」は既に使われています。別の値にしてください。`);
   }
   works.push({
-    id: meta.id,
-    client: meta.client,
+    slug: meta.slug,
+    title: meta.title,
     year: meta.year,
-    description: meta.description,
-    category: meta.category,
-    images: imagePaths,
-    coverImage: imagePaths[0] ?? '',
+    client: meta.client,
+    categories: [meta.category],
+    lead: meta.lead,
+    thumbnail: images[0] ?? { src: '', alt: meta.title },
+    images,
   });
   const worksContent = JSON.stringify(works, null, 2) + '\n';
 
@@ -117,7 +119,7 @@ export async function commitNewWork(meta: WorkMeta, imageBuffers: Buffer[]) {
   const commit = await ghJson<{ sha: string }>(`/repos/${OWNER}/${REPO}/git/commits`, {
     method: 'POST',
     body: JSON.stringify({
-      message: `作品追加: ${meta.client}（${meta.id}）`,
+      message: `作品追加: ${meta.client}（${meta.slug}）`,
       tree: newTree.sha,
       parents: [latestSha],
     }),
@@ -129,5 +131,5 @@ export async function commitNewWork(meta: WorkMeta, imageBuffers: Buffer[]) {
     body: JSON.stringify({ sha: commit.sha }),
   });
 
-  return { id: meta.id, commit: commit.sha, imagePaths };
+  return { slug: meta.slug, commit: commit.sha, images };
 }

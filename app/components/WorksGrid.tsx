@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import type { Project } from '@/lib/projects';
+import type { Work } from '@/lib/projects';
 import { CATEGORIES } from '@/lib/categories';
 
-export default function WorksGrid({ projects, initialCategory = null }: { projects: Project[]; initialCategory?: string | null }) {
+export default function WorksGrid({ works, initialCategory = null }: { works: Work[]; initialCategory?: string | null }) {
   const [active, setActive] = useState<string | null>(initialCategory);
 
   // DISCIPLINES などから ?category= 付きで来たとき、その絞り込みに追従する
@@ -13,7 +13,14 @@ export default function WorksGrid({ projects, initialCategory = null }: { projec
     setActive(initialCategory);
   }, [initialCategory]);
 
-  const filtered = active ? projects.filter((p) => p.category === active) : projects;
+  const filtered = active ? works.filter((w) => w.categories.some((c) => c === active)) : works;
+
+  // 実際に作品があるカテゴリだけフィルタに表示（空カテゴリ非表示）
+  const used = new Set(works.flatMap((w) => w.categories));
+  const tabs = CATEGORIES.filter((c) => used.has(c.id));
+
+  const catText = (ids: string[]) =>
+    ids.map((id) => CATEGORIES.find((c) => c.id === id)?.ja ?? id).join('・');
 
   return (
     <>
@@ -32,7 +39,7 @@ export default function WorksGrid({ projects, initialCategory = null }: { projec
         >
           All
         </button>
-        {CATEGORIES.map((cat) => (
+        {tabs.map((cat) => (
           <button
             key={cat.id}
             onClick={() => setActive(active === cat.id ? null : cat.id)}
@@ -51,34 +58,36 @@ export default function WorksGrid({ projects, initialCategory = null }: { projec
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-2" style={{ borderBottom: '1px solid #e0e0e0' }}>
-        {filtered.map((project) => (
+      <div className="grid grid-cols-2 md:grid-cols-3" style={{ borderBottom: '1px solid #e0e0e0' }}>
+        {filtered.map((work) => (
           <a
-            key={project.id}
-            href={`/works/${project.id}${active ? `?category=${active}` : ''}`}
+            key={work.slug}
+            href={`/works/${work.slug}${active ? `?category=${active}` : ''}`}
             className="group"
             style={{ borderRight: '1px solid #e0e0e0', borderBottom: '1px solid #e0e0e0', marginRight: '-1px', display: 'block', textDecoration: 'none' }}
           >
             <div className="w-full relative overflow-hidden" style={{ aspectRatio: '4 / 3', background: '#f0f0f0' }}>
-              {project.coverImage ? (
+              {work.thumbnail?.src ? (
                 <Image
-                  src={project.coverImage}
-                  alt={project.client}
+                  src={work.thumbnail.src}
+                  alt={work.thumbnail.alt}
                   fill
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-103"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
-                  <span style={{ color: '#bbb', fontSize: '10px' }}>{project.description}</span>
+                  <span style={{ color: '#bbb', fontSize: '10px' }}>{work.title}</span>
                 </div>
               )}
             </div>
             <div className="px-4 pt-2 pb-5">
-              <p className="font-light truncate" style={{ fontSize: '10px', letterSpacing: '0.03em' }}>
-                <span style={{ color: '#888', marginRight: '0.6em' }}>{project.year}</span>
-                <span style={{ color: '#111', marginRight: '0.6em' }}>{project.client}</span>
-                <span style={{ color: '#666' }}>{project.description}</span>
+              <p className="font-light truncate" style={{ fontSize: '11px', letterSpacing: '0.03em', color: '#111' }}>
+                {work.title}
+              </p>
+              <p className="font-light truncate mt-1" style={{ fontSize: '10px' }}>
+                <span style={{ color: '#888', marginRight: '0.6em' }}>{work.year}</span>
+                <span style={{ color: '#666' }}>{catText(work.categories)}</span>
               </p>
             </div>
           </a>

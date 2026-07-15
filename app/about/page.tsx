@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Nav from "@/app/components/Nav";
 
@@ -6,6 +7,23 @@ const notoSans = Noto_Sans_JP({
   weight: ["300", "400"],
   variable: "--font-noto-sans",
 });
+
+const ABOUT_DESCRIPTION =
+  "前田敏幸／taido.design のプロフィール。社会的意義や文脈を、外に届く言葉・デザイン・写真・導線に変換する。大阪府豊中市を拠点に活動。";
+
+export const metadata: Metadata = {
+  title: "About｜taido.design",
+  description: ABOUT_DESCRIPTION,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About｜taido.design",
+    description: ABOUT_DESCRIPTION,
+    url: "/about",
+    siteName: "taido.design",
+    locale: "ja_JP",
+    type: "profile",
+  },
+};
 
 export default function About() {
   return (
