@@ -166,7 +166,7 @@ function Section({ label, body }: { label: string; body: string }) {
   return (
     <div className="mt-10">
       <p className="text-xs font-light mb-3" style={labelStyle}>{label}</p>
-      <p className="font-light" style={{ color: '#333', fontSize: '0.95rem', lineHeight: 2 }}>{body}</p>
+      <p className="font-light" style={{ color: '#333', fontSize: '0.95rem', lineHeight: 2, whiteSpace: 'pre-line', maxWidth: '42em' }}>{body}</p>
     </div>
   );
 }

@@ -4,32 +4,88 @@
     "title": "むすびばな",
     "year": "2026",
     "client": "むすびばな",
-    "categories": ["branding", "editorial"],
-    "services": ["ロゴデザイン", "名刺・ツール", "パンフレット", "エディトリアル", "コピーライティング"],
-    "lead": "ロゴ・名刺・パンフレット・編集まで一貫して手がけたブランディング。",
-    "thumbnail": { "src": "/musubibana-card-close.jpg", "alt": "むすびばなのロゴを配した名刺のクローズアップ" },
+    "categories": [
+      "branding",
+      "editorial"
+    ],
+    "services": [
+      "アートディレクション",
+      "グラフィックデザイン",
+      "エディトリアルデザイン",
+      "コピーライティング"
+    ],
+    "lead": "プライベートキッズスペース「むすびばな」のロゴ・名刺・リーフレット2種。子どもと親の居場所を、言葉とデザインで町へ届けるための一連の設計。",
+    "thumbnail": {
+      "src": "/musubibana-card-close.jpg",
+      "alt": "むすびばなのロゴを配した名刺のクローズアップ"
+    },
     "images": [
-      { "src": "/musubibana-card-close.jpg", "alt": "むすびばなのロゴ（緑と赤の花のマーク）を配した名刺のクローズアップ" },
-      { "src": "/musubibana-card-flat.jpg", "alt": "むすびばなの名刺" },
-      { "src": "/musubibana-card-flat-2.jpg", "alt": "むすびばなの名刺（斜めのアングル）" },
-      { "src": "/musubibana-pamphlet-cover.jpg", "alt": "むすびばなのパンフレット表紙。子どもたちの写真とロゴ" },
-      { "src": "/musubibana-pamphlet-spread.jpg", "alt": "むすびばなパンフレットの見開き。使い方・設備・料金の紹介" },
-      { "src": "/musubibana-pamphlet-inner.jpg", "alt": "むすびばなパンフレットの見開き。オーナー紹介とロゴの由来" }
+      {
+        "src": "/musubibana-card-close.jpg",
+        "alt": "むすびばなのロゴ（緑と赤の花のマーク）を配した名刺のクローズアップ",
+        "caption": "名刺｜ロゴ面"
+      },
+      {
+        "src": "/musubibana-card-flat.jpg",
+        "alt": "むすびばなの名刺",
+        "caption": "名刺"
+      },
+      {
+        "src": "/musubibana-card-flat-2.jpg",
+        "alt": "むすびばなの名刺（斜めのアングル）",
+        "caption": "名刺のディテール"
+      },
+      {
+        "src": "/musubibana-pamphlet-cover.jpg",
+        "alt": "むすびばなのパンフレット表紙。子どもたちの写真とロゴ",
+        "caption": "カスタマー向けリーフレット｜表紙"
+      },
+      {
+        "src": "/musubibana-pamphlet-spread.jpg",
+        "alt": "むすびばなパンフレットの見開き。使い方・設備・料金の紹介",
+        "caption": "カスタマー向けリーフレット｜使い方・うれしい設備・料金"
+      },
+      {
+        "src": "/musubibana-pamphlet-inner.jpg",
+        "alt": "むすびばな事業者向けリーフレットの見開き。カフェ・サロン・クリニックの想定シーンと専門家・事業者の声",
+        "caption": "事業者向けリーフレット｜想定シーンと専門家・事業者の声"
+      }
     ],
     "featured": true,
-    "order": 1
+    "order": 1,
+    "challenge": "むすびばなは、オーナーのゆきさんが自身の経験から立ち上げた、親子で過ごせるプライベートキッズスペース。これまではto Cの利用者を中心に運営されてきました。\n\n日々の運営で積み上がっていく「子どもが過ごしやすい設計」「親の安心」「スタッフ負担の調整」「地域からの信頼」。この実践を、この場所の中だけに留めておくのはもったいない——制作に関わるなかで、強くそう感じました。いろんな町にむすびばなのような場が広がれば、その土地の豊かさにつながる。事業の発展を土台に、to Bの動きへも広げていく足がかりが必要でした。",
+    "approach": "名刺は、最小の“体験設計”だと考えました。手に取った瞬間の印象と、必要な情報へ迷わず辿り着けること。ここを最優先に、余白と階層、紙の選定を組み立てています。代表のゆきさんが然るべき場所へ出向いて魅力を伝えられるように。初めての方にも、利用したことのある方にも「次はこんな使い方をしようかな」と思ってもらえるよう、さまざまな利用シーンの提案も盛り込みました。\n\nリーフレットは2種類。ひとつは利用者に向けたもの、もうひとつは、この実践を他の場所へ広げていくための事業者向けです。",
+    "design": "ロゴ｜ネーミング「結びあって 花ひらく」に象徴される“実り”と“開き”をコンセプトに、成長の循環を表す“実り”（緑）と“花”（桃）のモチーフの間に、種のシルエットを潜ませました。むすびばなは、子どもの成長を見守る場であると同時に、見守る親の可能性も発芽する場所。その種になっているのは、場の安全性と、肯定的で建設的な態度だと考えています。\n\nカスタマー向けリーフレット｜“むすびばな”はどんな場所で、誰が、どんな想いで作った空間なのか。オーナーの個人的な経験から始め、子育てや孤立といった社会課題の共有へつなげながら、「街には味方がいる」ことをそっと伝えます。\n\n事業者向けリーフレット｜家族にやさしい環境づくりが、売上だけでなくスタッフの負担軽減や地域からの信頼にもつながる。その道筋を言語化しました。1枚目は右に“目指す世界”、左に“できることと進め方”を置き、共感から判断へつなぐ読み順そのものを導線にしています。裏面は導入の流れを4ステップ（ご相談60分無料 → 方向性プランニング → ご提案 → 導入・サポート）で可視化。見開きにはカフェ・サロン・クリニックの想定シーンと、専門家・事業者の声を添えました。",
+    "deliverables": [
+      "ロゴ",
+      "名刺",
+      "カスタマー向けリーフレット",
+      "事業者向けリーフレット"
+    ]
   },
   {
     "slug": "sumi-takeshi-photobook",
     "title": "澄毅 写真集",
     "year": "2026",
     "client": "澄毅",
-    "categories": ["graphic-design"],
-    "services": ["アートディレクション", "写真集デザイン", "造本設計"],
+    "categories": [
+      "graphic-design"
+    ],
+    "services": [
+      "アートディレクション",
+      "写真集デザイン",
+      "造本設計"
+    ],
     "lead": "写真集のディレクション・デザイン・造本設計。",
-    "thumbnail": { "src": "/photobook-embroidery-detail.jpg", "alt": "澄毅の写真集の誌面ディテール。刺繍が施されたページ" },
+    "thumbnail": {
+      "src": "/photobook-embroidery-detail.jpg",
+      "alt": "澄毅の写真集の誌面ディテール。刺繍が施されたページ"
+    },
     "images": [
-      { "src": "/photobook-embroidery-detail.jpg", "alt": "澄毅の写真集の誌面ディテール。刺繍が施されたページ" }
+      {
+        "src": "/photobook-embroidery-detail.jpg",
+        "alt": "澄毅の写真集の誌面ディテール。刺繍が施されたページ"
+      }
     ],
     "featured": true,
     "order": 2
@@ -39,13 +95,26 @@
     "title": "ハマノユリナ&伊藤寛哲 コンサート",
     "year": "2024",
     "client": "ハマノユリナ&伊藤寛哲",
-    "categories": ["graphic-design"],
-    "services": ["フライヤーデザイン"],
+    "categories": [
+      "graphic-design"
+    ],
+    "services": [
+      "フライヤーデザイン"
+    ],
     "lead": "コンサート「ときと共に」のフライヤーデザイン。",
-    "thumbnail": { "src": "/works/hamanoyurina-itohirosato-youkisou-1.jpg", "alt": "ハマノユリナ&伊藤寛哲コンサート「ときと共に」のフライヤー" },
+    "thumbnail": {
+      "src": "/works/hamanoyurina-itohirosato-youkisou-1.jpg",
+      "alt": "ハマノユリナ&伊藤寛哲コンサート「ときと共に」のフライヤー"
+    },
     "images": [
-      { "src": "/works/hamanoyurina-itohirosato-youkisou-1.jpg", "alt": "ハマノユリナ&伊藤寛哲コンサート「ときと共に」のフライヤー" },
-      { "src": "/works/hamanoyurina-itohirosato-youkisou-2.jpg", "alt": "ハマノユリナ&伊藤寛哲コンサートのフライヤー（別カット）" }
+      {
+        "src": "/works/hamanoyurina-itohirosato-youkisou-1.jpg",
+        "alt": "ハマノユリナ&伊藤寛哲コンサート「ときと共に」のフライヤー"
+      },
+      {
+        "src": "/works/hamanoyurina-itohirosato-youkisou-2.jpg",
+        "alt": "ハマノユリナ&伊藤寛哲コンサートのフライヤー（別カット）"
+      }
     ],
     "order": 3
   }
