@@ -10,10 +10,10 @@
   --rule: #e2ded5; /* 罫線（極力使わない） */
 
   /* --- 書体 ---
-     ▼英字の表示用書体はここ1行で切り替わる。
-       Optima に戻す場合は下2行のコメントを入れ替える。 */
-  --font-display: var(--font-space-grotesk), "Hiragino Sans", "Yu Gothic", sans-serif;
-  /* --font-display: "Optima", "Optima Nova", Candara, "Hiragino Sans", sans-serif; */
+     英字の表示用書体。現在は Optima（ロゴと同系統のヒューマニスト）。
+     Space Grotesk に切り替える場合は下2行のコメントを入れ替える。 */
+  /* --font-display: var(--font-space-grotesk), "Hiragino Sans", "Yu Gothic", sans-serif; */
+  --font-display: "Optima", "Optima Nova", Candara, "Hiragino Sans", sans-serif;
 
   --font-body: var(--font-inter), var(--font-noto-sans), "Hiragino Sans", "Yu Gothic", sans-serif;
 
