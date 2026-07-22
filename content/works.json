@@ -108,19 +108,19 @@
     ],
     "lead": "ハマノユリナ & 伊藤寛哲の公演フライヤー。会場ごとに1公演ずつデザインを起こし、2023年には大阪2日間のライブの企画・運営も担当した。",
     "thumbnail": {
-      "src": "/works/hamano-ito-permeate.jpg",
-      "alt": "ハマノユリナ & 伊藤寛哲の公演「浸透 permeate」のフライヤー"
+      "src": "/works/hamano-ito-kasanari.jpg",
+      "alt": "公演「重鳴り」のフライヤー。淡い青と桃のグラデーションに縦組みのタイトル"
     },
     "images": [
-      {
-        "src": "/works/hamano-ito-permeate.jpg",
-        "alt": "公演「浸透 permeate」のフライヤー。屋外の緑を背景にした二人の写真",
-        "caption": "浸透 permeate｜岐阜・クララザール じゅうろく音楽堂（2024.10.14）"
-      },
       {
         "src": "/works/hamano-ito-kasanari.jpg",
         "alt": "公演「重鳴り」のフライヤー。淡い青と桃のグラデーションに縦組みのタイトル",
         "caption": "重鳴り｜名古屋聖マタイ教会・弦楽四重奏（2024.7.6）"
+      },
+      {
+        "src": "/works/hamano-ito-permeate.jpg",
+        "alt": "公演「浸透 permeate」のフライヤー。屋外の緑を背景にした二人の写真",
+        "caption": "浸透 permeate｜岐阜・クララザール じゅうろく音楽堂（2024.10.14）"
       },
       {
         "src": "/works/hamano-ito-immersion.jpg",
