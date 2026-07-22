@@ -94,7 +94,7 @@
   {
     "slug": "hamanoyurina-itohirosato-youkisou",
     "title": "ハマノユリナ & 伊藤寛哲",
-    "year": "2023–2024",
+    "year": "2022–2024",
     "client": "ハマノユリナ & 伊藤寛哲",
     "categories": [
       "graphic-design",
@@ -118,19 +118,29 @@
         "caption": "重鳴り｜名古屋聖マタイ教会・弦楽四重奏（2024.7.6）"
       },
       {
-        "src": "/works/hamano-ito-permeate.jpg",
-        "alt": "公演「浸透 permeate」のフライヤー。屋外の緑を背景にした二人の写真",
-        "caption": "浸透 permeate｜岐阜・クララザール じゅうろく音楽堂（2024.10.14）"
+        "src": "/works/hamano-ito-koboreochiru.jpg",
+        "alt": "公演「零れ落ちる、その前に。」のフライヤー。イラストを主役にした構成",
+        "caption": "零れ落ちる、その前に。｜東京・渋谷 Brat（2022.12.12）"
       },
       {
-        "src": "/works/hamano-ito-immersion.jpg",
-        "alt": "公演「IMMERSION」のフライヤー。モノクロの写真と文字だけで構成",
-        "caption": "IMMERSION｜TAKE FIVE OSAKA（2024.7.17）"
+        "src": "/works/hamanoyurina-itohirosato-youkisou-1.jpg",
+        "alt": "公演「ときと共に」のフライヤー",
+        "caption": "ときと共に｜名古屋・揚輝荘（2023.9.16）"
       },
       {
-        "src": "/works/hamano-ito-eatmusic.jpg",
-        "alt": "公演「EAT MUSIC」のフライヤー。桃色の地に白のタイトル",
-        "caption": "EAT MUSIC｜福岡（2024.7.12）"
+        "src": "/works/hamano-ito-tokinoteihaku.jpg",
+        "alt": "公演「時の碇泊」のフライヤー。深い青緑を地にしたポートレート",
+        "caption": "時の碇泊｜メニコン シアターAoi（2023.12.8）"
+      },
+      {
+        "src": "/works/hamano-ito-busstopcafe.jpg",
+        "alt": "BUS STOP CAFE 公演のフライヤー。カラフルな立体文字のタイトル",
+        "caption": "BUS STOP CAFE｜大阪・豊中（2024.5.14）"
+      },
+      {
+        "src": "/works/hamano-ito-kyomei.jpg",
+        "alt": "公演「共鳴 Sympathized」のフライヤー。ターコイズの地に縦組みのタイトル",
+        "caption": "共鳴 Sympathized｜TAKE FIVE OSAKA（2024.5.15）"
       },
       {
         "src": "/works/hamano-ito-bran.jpg",
@@ -138,28 +148,73 @@
         "caption": "Cafe & Live bar BRAN｜三重県津市（2024.6.1）"
       },
       {
+        "src": "/works/hamano-ito-kominka-0602.jpg",
+        "alt": "「古民家で演奏を」のフライヤー。障子と提灯のある室内の写真",
+        "caption": "古民家で演奏を｜古民家 nokisaki+（2024.6.2）"
+      },
+      {
+        "src": "/works/hamano-ito-eatmusic.jpg",
+        "alt": "公演「EAT MUSIC」のフライヤー。桃色の地に白のタイトル",
+        "caption": "EAT MUSIC｜福岡・como es（2024.7.12）"
+      },
+      {
+        "src": "/works/hamano-ito-umikaze.jpg",
+        "alt": "公演「海風に乗って」のフライヤー。白地に横組みのタイトル",
+        "caption": "海風に乗って｜うとのふカフェ（2024.7.13）"
+      },
+      {
+        "src": "/works/hamano-ito-whiteship.jpg",
+        "alt": "ほわいとしっぷでのワンマンライブのフライヤー。青の地に二人の写真",
+        "caption": "ほわいとしっぷ｜熊本（2024.7.14）"
+      },
+      {
+        "src": "/works/hamano-ito-fsoundcafe.jpg",
+        "alt": "f sound cafe でのライブのフライヤー。白地に写真を縦に並べた構成",
+        "caption": "f sound cafe｜大分（2024.7.15）"
+      },
+      {
+        "src": "/works/hamano-ito-immersion.jpg",
+        "alt": "公演「IMMERSION」のフライヤー。モノクロの写真と文字だけで構成",
+        "caption": "IMMERSION｜TAKE FIVE OSAKA（2024.7.17）"
+      },
+      {
+        "src": "/works/hamano-ito-planetarium.jpg",
+        "alt": "「Planetarium Concert」のフライヤー。夜の木立を背景にしたモノクロ",
+        "caption": "Planetarium Concert｜隠れ家dining CURA〜蔵〜（2024.7.20）"
+      },
+      {
+        "src": "/works/hamano-ito-lino.jpg",
+        "alt": "cafeandbar Lino でのライブのフライヤー。写真を組み合わせた構成",
+        "caption": "cafeandbar Lino｜三重県津市（2024.8.12）"
+      },
+      {
+        "src": "/works/hamano-ito-nokisaki-0831.jpg",
+        "alt": "KOMINKA nokisaki+ でのライブのフライヤー。淡い緑地に植物のイラスト",
+        "caption": "KOMINKA nokisaki+ ／つぎの食堂（2024.8.31）"
+      },
+      {
+        "src": "/works/hamano-ito-permeate.jpg",
+        "alt": "公演「浸透 permeate」のフライヤー。屋外の緑を背景にした二人の写真",
+        "caption": "浸透 permeate｜岐阜・クララザール じゅうろく音楽堂（2024.10.14）"
+      },
+      {
+        "src": "/works/hamano-ito-christmas.jpg",
+        "alt": "クリスマスコンサートのフライヤー。緑地に白い薔薇のアーチ",
+        "caption": "Christmas Concert｜山梨県北杜市（2024.12.12）"
+      },
+      {
         "src": "/works/hamano-ito-flyingbooks.jpg",
-        "alt": "Flying Books でのライブのフライヤー",
+        "alt": "Flying Books でのライブのフライヤーを並べたもの",
         "caption": "Flying Books｜東京・渋谷"
       },
       {
         "src": "/works/hamano-ito-mimosa.jpg",
-        "alt": "ギャラリーミモザノキセキでのライブのフライヤー",
+        "alt": "ギャラリーミモザノキセキでのライブのフライヤーを並べたもの",
         "caption": "ギャラリーミモザノキセキ｜三重県桑名市"
-      },
-      {
-        "src": "/works/hamanoyurina-itohirosato-youkisou-1.jpg",
-        "alt": "公演「ときと共に」のフライヤー",
-        "caption": "ときと共に｜名古屋・揚輝荘"
-      },
-      {
-        "src": "/works/hamanoyurina-itohirosato-youkisou-2.jpg",
-        "alt": "公演「ときと共に」のフライヤー（別カット）",
-        "caption": "ときと共に｜別カット"
       }
     ],
     "order": 3,
-    "challenge": "お二人とは、一度きりの制作ではなく、公演のたびにご一緒してきました。津、名古屋、福岡、大阪、岐阜、桑名、渋谷——会場は各地に散らばり、規模も編成もそれぞれ違います。\n\nこうした活動を支えるフライヤーには、相反する二つが要ります。毎回きちんと「その公演のもの」に見えること。それでいて、続けて目にした人には同じ二人の活動だと分かること。",
+    "challenge": "お二人とは、一度きりの制作ではなく、公演のたびにご一緒してきました。2022年から2024年までに20を超える公演。津、名古屋、福岡、大分、熊本、大阪、岐阜、桑名、山梨、渋谷——会場は各地に散らばり、規模も編成もそれぞれ違います。\n\nこうした活動を支えるフライヤーには、相反する二つが要ります。毎回きちんと「その公演のもの」に見えること。それでいて、続けて目にした人には同じ二人の活動だと分かること。",
     "approach": "枠を固定して、中身を変える。その方法を採りました。\n\nお二人の写真、円形のロゴマーク、日時と会場の情報ブロック。この3つの置き方は共通のルールにしています。そのうえで、公演タイトル・色・組み方は毎回つくり直す。変えない部分が「同じ二人だ」と伝え、変える部分が「今回はこの公演だ」と伝えます。",
     "design": "公演ごとの表情は、会場と編成から決めています。\n\n「重鳴り」は弦楽四重奏を教会で聴く公演。淡い青と桃のグラデーションに縦組みのタイトルを重ね、響きが層になっていく感じを紙面の重なりに置きました。「浸透」は屋外の緑を大きく使い、タイトルを画面の中ほどで開きます。ジャズバーでの「IMMERSION」はモノクロに絞り、写真と文字だけで構成しました。福岡の「EAT MUSIC」は桃色の地に白のタイトル。会場の空気に合わせて、明度と色数を毎回振り直しています。\n\nタイトルの立て方も公演ごとに変えています。「浸透 permeate」のように日本語と英語を並べた回もあれば、「IMMERSION」のように英語を主にした回もあります。",
     "outcome": "2023年には、大阪での2日間のライブそのものを企画・運営しました。会場の設定から当日の運営まで。音楽ライブの企画は未経験で、周りの協力を仰ぎながらの進行でした。\n\nコンパクトな会場だったことで、演者と客席の物理的な距離が近くなりました。その近さが、心の距離にもつながったように感じています。フライヤーをつくることと、人が集まる場そのものをつくることは、地続きでした。",
