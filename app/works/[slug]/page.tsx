@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getWork, getWorks, CATEGORIES } from '@/lib/projects';
 import Nav from '@/app/components/Nav';
+import WorkGallery from '@/app/components/WorkGallery';
 
 function catLabels(ids: string[]) {
   return ids.map((id) => CATEGORIES.find((c) => c.id === id)?.ja ?? id);
@@ -106,19 +107,8 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         {work.approach && <Section label="Approach" body={work.approach} />}
         {work.design && <Section label="Design" body={work.design} />}
 
-        {/* ===== Images ===== */}
-        {rest.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-16">
-            {rest.map((img, i) => (
-              <figure key={i} className="m-0">
-                <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4/3', background: '#e9e5dc' }}>
-                  <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
-                </div>
-                {img.caption && <figcaption className="label mt-3" style={{ textTransform: 'none', letterSpacing: '0.06em' }}>{img.caption}</figcaption>}
-              </figure>
-            ))}
-          </div>
-        ) : null}
+        {/* ===== Images（クリックで拡大。裏面があれば拡大内で切り替え） ===== */}
+        {rest.length > 0 ? <WorkGallery images={rest} /> : null}
 
         {work.deliverables?.length ? (
           <div className="mt-16" style={{ borderTop: '1px solid var(--rule)', paddingTop: '1.75rem' }}>

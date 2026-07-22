@@ -115,17 +115,20 @@
       {
         "src": "/works/hamano-ito-kasanari.jpg",
         "alt": "公演「重鳴り」のフライヤー。淡い青と桃のグラデーションに縦組みのタイトル",
-        "caption": "重鳴り｜名古屋聖マタイ教会・弦楽四重奏（2024.7.6）"
-      },
-      {
-        "src": "/works/hamano-ito-kasanari-back.jpg",
-        "alt": "公演「重鳴り」フライヤーの裏面。名古屋聖マタイ教会の写真と出演者のプロフィール",
-        "caption": "重鳴り｜裏面・会場と出演者"
+        "caption": "重鳴り｜名古屋聖マタイ教会・弦楽四重奏（2024.7.6）",
+        "back": {
+          "src": "/works/hamano-ito-kasanari-back.jpg",
+          "alt": "公演「重鳴り」フライヤーの裏面。名古屋聖マタイ教会の写真と出演者のプロフィール"
+        }
       },
       {
         "src": "/works/hamano-ito-koboreochiru.jpg",
         "alt": "公演「零れ落ちる、その前に。」のフライヤー。イラストを主役にした構成",
-        "caption": "零れ落ちる、その前に。｜東京・渋谷 Brat（2022.12.12）"
+        "caption": "零れ落ちる、その前に。｜東京・渋谷 Brat（2022.12.12）",
+        "back": {
+          "src": "/works/hamano-ito-koboreochiru-back.jpg",
+          "alt": "公演「零れ落ちる、その前に。」フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamanoyurina-itohirosato-youkisou-1.jpg",
@@ -135,37 +138,65 @@
       {
         "src": "/works/hamano-ito-tokinoteihaku.jpg",
         "alt": "公演「時の碇泊」のフライヤー。深い青緑を地にしたポートレート",
-        "caption": "時の碇泊｜メニコン シアターAoi（2023.12.8）"
+        "caption": "時の碇泊｜メニコン シアターAoi（2023.12.8）",
+        "back": {
+          "src": "/works/hamano-ito-tokinoteihaku-back.jpg",
+          "alt": "公演「時の碇泊」フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-busstopcafe.jpg",
         "alt": "BUS STOP CAFE 公演のフライヤー。カラフルな立体文字のタイトル",
-        "caption": "BUS STOP CAFE｜大阪・豊中（2024.5.14）"
+        "caption": "BUS STOP CAFE｜大阪・豊中（2024.5.14）",
+        "back": {
+          "src": "/works/hamano-ito-busstopcafe-back.jpg",
+          "alt": "BUS STOP CAFE 公演フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-kyomei.jpg",
         "alt": "公演「共鳴 Sympathized」のフライヤー。ターコイズの地に縦組みのタイトル",
-        "caption": "共鳴 Sympathized｜TAKE FIVE OSAKA（2024.5.15）"
+        "caption": "共鳴 Sympathized｜TAKE FIVE OSAKA（2024.5.15）",
+        "back": {
+          "src": "/works/hamano-ito-kyomei-back.jpg",
+          "alt": "公演「共鳴 Sympathized」フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-bran.jpg",
         "alt": "Cafe & Live bar BRAN でのワンマンライブのフライヤー",
-        "caption": "Cafe & Live bar BRAN｜三重県津市（2024.6.1）"
+        "caption": "Cafe & Live bar BRAN｜三重県津市（2024.6.1）",
+        "back": {
+          "src": "/works/hamano-ito-bran-back.jpg",
+          "alt": "Cafe & Live bar BRAN 公演フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-kominka-0602.jpg",
         "alt": "「古民家で演奏を」のフライヤー。障子と提灯のある室内の写真",
-        "caption": "古民家で演奏を｜古民家 nokisaki+（2024.6.2）"
+        "caption": "古民家で演奏を｜古民家 nokisaki+（2024.6.2）",
+        "back": {
+          "src": "/works/hamano-ito-kominka-0602-back.jpg",
+          "alt": "「古民家で演奏を」フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-eatmusic.jpg",
         "alt": "公演「EAT MUSIC」のフライヤー。桃色の地に白のタイトル",
-        "caption": "EAT MUSIC｜福岡・como es（2024.7.12）"
+        "caption": "EAT MUSIC｜福岡・como es（2024.7.12）",
+        "back": {
+          "src": "/works/hamano-ito-eatmusic-back.jpg",
+          "alt": "EAT MUSIC フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-umikaze.jpg",
         "alt": "公演「海風に乗って」のフライヤー。白地に横組みのタイトル",
-        "caption": "海風に乗って｜うとのふカフェ（2024.7.13）"
+        "caption": "海風に乗って｜うとのふカフェ（2024.7.13）",
+        "back": {
+          "src": "/works/hamano-ito-umikaze-back.jpg",
+          "alt": "公演「海風に乗って」フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-whiteship.jpg",
@@ -180,22 +211,38 @@
       {
         "src": "/works/hamano-ito-immersion.jpg",
         "alt": "公演「IMMERSION」のフライヤー。モノクロの写真と文字だけで構成",
-        "caption": "IMMERSION｜TAKE FIVE OSAKA（2024.7.17）"
+        "caption": "IMMERSION｜TAKE FIVE OSAKA（2024.7.17）",
+        "back": {
+          "src": "/works/hamano-ito-immersion-back.jpg",
+          "alt": "公演「IMMERSION」フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-planetarium.jpg",
         "alt": "「Planetarium Concert」のフライヤー。夜の木立を背景にしたモノクロ",
-        "caption": "Planetarium Concert｜隠れ家dining CURA〜蔵〜（2024.7.20）"
+        "caption": "Planetarium Concert｜隠れ家dining CURA〜蔵〜（2024.7.20）",
+        "back": {
+          "src": "/works/hamano-ito-planetarium-back.jpg",
+          "alt": "Planetarium Concert フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-lino.jpg",
         "alt": "cafeandbar Lino でのライブのフライヤー。写真を組み合わせた構成",
-        "caption": "cafeandbar Lino｜三重県津市（2024.8.12）"
+        "caption": "cafeandbar Lino｜三重県津市（2024.8.12）",
+        "back": {
+          "src": "/works/hamano-ito-lino-back.jpg",
+          "alt": "cafeandbar Lino 公演フライヤーの裏面。会場の紹介"
+        }
       },
       {
         "src": "/works/hamano-ito-nokisaki-0831.jpg",
         "alt": "KOMINKA nokisaki+ でのライブのフライヤー。淡い緑地に植物のイラスト",
-        "caption": "KOMINKA nokisaki+ ／つぎの食堂（2024.8.31）"
+        "caption": "KOMINKA nokisaki+ ／つぎの食堂（2024.8.31）",
+        "back": {
+          "src": "/works/hamano-ito-nokisaki-0831-back.jpg",
+          "alt": "KOMINKA nokisaki+ 公演フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-permeate.jpg",
@@ -205,7 +252,11 @@
       {
         "src": "/works/hamano-ito-christmas.jpg",
         "alt": "クリスマスコンサートのフライヤー。緑地に白い薔薇のアーチ",
-        "caption": "Christmas Concert｜山梨県北杜市（2024.12.12）"
+        "caption": "Christmas Concert｜山梨県北杜市（2024.12.12）",
+        "back": {
+          "src": "/works/hamano-ito-christmas-back.jpg",
+          "alt": "Christmas Concert フライヤーの裏面"
+        }
       },
       {
         "src": "/works/hamano-ito-flyingbooks.jpg",

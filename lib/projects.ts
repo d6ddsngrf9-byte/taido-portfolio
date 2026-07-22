@@ -12,6 +12,8 @@ export type WorkImage = {
   width?: number;
   height?: number;
   caption?: string;
+  /** 裏面。あると拡大表示のなかで表裏を切り替えられる */
+  back?: { src: string; alt: string };
 };
 
 export type Work = {
