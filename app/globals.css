@@ -1,25 +1,110 @@
 @import "tailwindcss";
 
 :root {
-  --moss: #4a5c3a;
-  --moss-dark: #3a4a2c;
-  --moss-light: #5e7249;
-  --cream: #f5f3ee;
-  --ink: #1a1a1a;
-  /* ページ全体のうっすらベージュ背景 */
-  --paper: #f7f4ee;
+  /* --- palette：白基調＋緑は「点」でだけ使う --- */
+  --paper: #f7f4ee; /* 基調（うっすらベージュの白） */
+  --green: #3a5545; /* アクセント */
+  --ink: #111111; /* 見出し */
+  --body: #3a3a38; /* 本文 */
+  --muted: #9a978f; /* ラベル・補助 */
+  --rule: #e2ded5; /* 罫線（極力使わない） */
+
+  /* --- 書体 ---
+     ▼英字の表示用書体はここ1行で切り替わる。
+       Optima に戻す場合は下2行のコメントを入れ替える。 */
+  --font-display: var(--font-space-grotesk), "Hiragino Sans", "Yu Gothic", sans-serif;
+  /* --font-display: "Optima", "Optima Nova", Candara, "Hiragino Sans", sans-serif; */
+
+  --font-body: var(--font-inter), var(--font-noto-sans), "Hiragino Sans", "Yu Gothic", sans-serif;
+
+  /* --- 余白のリズム --- */
+  --gut: 1.5rem;
+  --gut-lg: 2.5rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--paper);
-  color: var(--foreground);
+  color: var(--body);
+  font-family: var(--font-body);
   /* 日本語の約物・かなのアキを詰める（・ 、 。など）。英数字は影響なし */
   font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* figure.ai 由来：英字ラベルは大文字＋トラッキング */
+.label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+  display: block;
+}
+
+.label--green {
+  color: var(--green);
+}
+
+/* 大見出し：軽いウェイト＋字間を締める */
+.display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+/* figure.ai の署名要素：角丸アウトライン＋↗ */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9em;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.85em 1.6em;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.cta--ink {
+  color: var(--green);
+}
+.cta--ink:hover {
+  background: var(--green);
+  color: var(--paper);
+}
+
+.cta--paper {
+  color: #ffffff;
+}
+.cta--paper:hover {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.cta__arrow {
+  font-size: 0.9em;
+  transition: transform 0.35s ease;
+}
+.cta:hover .cta__arrow {
+  transform: translate(2px, -2px);
+}
+
+/* 本文：両端揃え。段落末尾の行は伸びない（罫線と端がそろう） */
+.prose-jp {
+  text-align: justify;
+  line-height: 2;
+  white-space: pre-line;
+  color: var(--body);
 }

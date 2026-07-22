@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Space_Grotesk, Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/* 表示用（見出し・英字ラベル）。figure.ai の Neue Machina に相当する技術系グロテスク */
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  display: "swap",
+});
+
+/* 本文用。figure.ai の Neue Haas Grotesk に相当する中立グロテスク */
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans",
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  display: "swap",
 });
 
 const SITE_DESCRIPTION =
@@ -36,10 +53,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${geistSans.variable} h-full`}>
-      <body className="min-h-full text-neutral-900 antialiased">
-        {children}
-      </body>
+    <html
+      lang="ja"
+      className={`${spaceGrotesk.variable} ${inter.variable} ${notoSansJP.variable} h-full`}
+    >
+      <body className="min-h-full antialiased">{children}</body>
     </html>
   );
 }

@@ -2,17 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Noto_Sans_JP } from 'next/font/google';
 import { getWork, getWorks, CATEGORIES } from '@/lib/projects';
 import Nav from '@/app/components/Nav';
-
-const notoSans = Noto_Sans_JP({
-  subsets: ['latin'],
-  weight: ['300', '400'],
-  variable: '--font-noto-sans',
-});
-
-const labelStyle = { color: '#bbb', letterSpacing: '0.12em' } as const;
 
 function catLabels(ids: string[]) {
   return ids.map((id) => CATEGORIES.find((c) => c.id === id)?.ja ?? id);
@@ -50,89 +41,91 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const prev = idx > 0 ? all[idx - 1] : null;
   const next = idx < all.length - 1 ? all[idx + 1] : null;
 
+  // 1点目は全画面ビジュアルとして使い、残りをグリッドへ
+  const lead = work.images[0] ?? work.thumbnail;
+  const rest = work.images.slice(1);
+
   return (
-    <div
-      className={notoSans.variable}
-      style={{ fontFamily: "'Optima', 'Optima Nova', Candara, var(--font-noto-sans), sans-serif", background: 'var(--paper)', minHeight: '100vh' }}
-    >
+    <>
       <Nav />
 
-      <main className="px-6 md:px-10 py-12 max-w-5xl">
-        {/* Meta */}
-        <div className="mb-10" style={{ borderBottom: '1px solid #eee', paddingBottom: '1.5rem' }}>
-          <p className="text-xs font-light mb-2" style={{ color: '#3a5545', letterSpacing: '0.1em' }}>
-            {catLabels(work.categories).join('・')}
-          </p>
-          <p className="text-xs font-light mb-1" style={{ color: '#aaa', letterSpacing: '0.08em' }}>{work.year}</p>
-          <h1 className="font-light" style={{ fontSize: 'clamp(1.4rem, 3vw, 2.2rem)', color: '#111', lineHeight: 1.4 }}>
-            {work.title}
-          </h1>
-          <p className="font-light mt-3" style={{ color: '#555', fontSize: '0.95rem', lineHeight: 1.9 }}>{work.lead}</p>
+      {/* ===== Lead visual ===== */}
+      <section aria-hidden="true" className="relative" style={{ height: '70svh', minHeight: 360, background: '#e9e5dc' }}>
+        <Image src={lead.src} alt="" fill sizes="100vw" className="object-cover" priority />
+      </section>
 
-          {(work.client || work.services?.length) && (
-            <dl className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-8">
-              {work.client && (
-                <div>
-                  <dt className="text-xs font-light mb-1" style={labelStyle}>CLIENT</dt>
-                  <dd className="text-xs font-light" style={{ color: '#333' }}>{work.client}</dd>
-                </div>
-              )}
-              {work.services?.length ? (
-                <div>
-                  <dt className="text-xs font-light mb-1" style={labelStyle}>SERVICES</dt>
-                  <dd className="text-xs font-light" style={{ color: '#333', lineHeight: 1.9 }}>{work.services.join(' / ')}</dd>
-                </div>
-              ) : null}
-            </dl>
-          )}
-        </div>
+      <main className="px-6 md:px-10 pt-14 md:pt-20 pb-24 max-w-5xl">
+        {/* ===== Title ===== */}
+        <span className="label label--green">{catLabels(work.categories).join(' / ')}</span>
 
-        {/* Case study body（データがある項目のみ表示） */}
-        {work.challenge && <Section label="CONTEXT / CHALLENGE" body={work.challenge} />}
-        {work.approach && <Section label="APPROACH" body={work.approach} />}
-        {work.design && <Section label="DESIGN" body={work.design} />}
+        <h1 className="display mt-5" style={{ fontSize: 'clamp(1.7rem, 3.4vw, 2.9rem)' }}>
+          {work.title}
+        </h1>
 
-        {/* Images */}
-        {work.images.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-            {work.images.map((img, i) => (
+        <span className="label mt-4">{work.year}</span>
+
+        <p className="mt-7 font-light" style={{ color: 'var(--body)', fontSize: '0.95rem', lineHeight: 2 }}>
+          {work.lead}
+        </p>
+
+        {(work.client || work.services?.length) && (
+          <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-10">
+            {work.client && (
+              <div>
+                <dt className="label mb-2">Client</dt>
+                <dd className="font-light" style={{ color: 'var(--ink)', fontSize: '0.85rem' }}>{work.client}</dd>
+              </div>
+            )}
+            {work.services?.length ? (
+              <div>
+                <dt className="label mb-2">Services</dt>
+                <dd className="font-light" style={{ color: 'var(--ink)', fontSize: '0.85rem', lineHeight: 2 }}>
+                  {work.services.join(' / ')}
+                </dd>
+              </div>
+            ) : null}
+          </dl>
+        )}
+
+        {/* ===== Case study（データがある項目のみ） ===== */}
+        {work.challenge && <Section label="Context / Challenge" body={work.challenge} />}
+        {work.approach && <Section label="Approach" body={work.approach} />}
+        {work.design && <Section label="Design" body={work.design} />}
+
+        {/* ===== Images ===== */}
+        {rest.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-16">
+            {rest.map((img, i) => (
               <figure key={i} className="m-0">
-                <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4/3', background: '#f0f0f0' }}>
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                    priority={i === 0}
-                  />
+                <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4/3', background: '#e9e5dc' }}>
+                  <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                 </div>
-                {img.caption && (
-                  <figcaption className="text-xs font-light mt-2" style={{ color: '#999' }}>{img.caption}</figcaption>
-                )}
+                {img.caption && <figcaption className="label mt-3" style={{ textTransform: 'none', letterSpacing: '0.06em' }}>{img.caption}</figcaption>}
               </figure>
             ))}
           </div>
         ) : null}
 
         {work.deliverables?.length ? (
-          <div className="mt-10" style={{ borderTop: '1px solid #eee', paddingTop: '1.5rem' }}>
-            <p className="text-xs font-light mb-3" style={labelStyle}>DELIVERABLES</p>
-            <ul className="text-xs font-light" style={{ color: '#333', lineHeight: 2 }}>
-              {work.deliverables.map((d, i) => <li key={i}>{d}</li>)}
+          <div className="mt-16" style={{ borderTop: '1px solid var(--rule)', paddingTop: '1.75rem' }}>
+            <span className="label mb-4">Deliverables</span>
+            <ul className="font-light" style={{ color: 'var(--ink)', fontSize: '0.85rem', lineHeight: 2.2 }}>
+              {work.deliverables.map((d, i) => (
+                <li key={i}>{d}</li>
+              ))}
             </ul>
           </div>
         ) : null}
 
-        {work.outcome && <Section label="OUTCOME" body={work.outcome} />}
+        {work.outcome && <Section label="Outcome" body={work.outcome} />}
 
         {work.credits?.length ? (
-          <div className="mt-10" style={{ borderTop: '1px solid #eee', paddingTop: '1.5rem' }}>
-            <p className="text-xs font-light mb-3" style={labelStyle}>CREDITS</p>
-            <dl className="text-xs font-light" style={{ color: '#333', lineHeight: 2 }}>
+          <div className="mt-16" style={{ borderTop: '1px solid var(--rule)', paddingTop: '1.75rem' }}>
+            <span className="label mb-4">Credits</span>
+            <dl className="font-light" style={{ color: 'var(--ink)', fontSize: '0.85rem', lineHeight: 2.2 }}>
               {work.credits.map((c, i) => (
-                <div key={i} className="flex gap-4">
-                  <dt style={{ color: '#999', minWidth: '8em' }}>{c.role}</dt>
+                <div key={i} className="flex gap-6">
+                  <dt style={{ color: 'var(--muted)', minWidth: '9em' }}>{c.role}</dt>
                   <dd>{c.name}</dd>
                 </div>
               ))}
@@ -140,33 +133,47 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           </div>
         ) : null}
 
-        {/* Prev / Next（表示順を基準） */}
+        {/* ===== Prev / Next ===== */}
         {(prev || next) && (
-          <nav className="mt-14 grid grid-cols-2 gap-4" style={{ borderTop: '1px solid #eee', paddingTop: '1.5rem' }} aria-label="作品ナビゲーション">
+          <nav
+            className="mt-20 grid grid-cols-2 gap-6"
+            style={{ borderTop: '1px solid var(--rule)', paddingTop: '1.75rem' }}
+            aria-label="作品ナビゲーション"
+          >
             <div>{prev && <WorkLink dir="prev" work={prev} />}</div>
             <div className="flex justify-end">{next && <WorkLink dir="next" work={next} />}</div>
           </nav>
         )}
 
-        <div className="mt-8">
-          <Link href="/#works" className="text-xs font-light" style={{ color: '#aaa', letterSpacing: '0.08em', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-            ← Works に戻る
+        <div className="mt-12">
+          <Link
+            href="/#works"
+            className="label transition-opacity hover:opacity-55"
+            style={{ color: 'var(--green)' }}
+          >
+            ← Back to Works
           </Link>
         </div>
       </main>
 
-      <footer style={{ borderTop: '1px solid #eee', marginTop: '48px' }} className="px-6 md:px-10 py-4 flex items-center justify-between">
-        <span style={{ fontSize: '10px', color: '#ccc' }}>© 2026 taido.design</span>
+      <footer
+        style={{ borderTop: '1px solid var(--rule)' }}
+        className="px-6 md:px-10 py-6 flex items-center justify-between"
+      >
+        <span className="label" style={{ fontSize: '10px' }}>© 2026 taido.design</span>
+        <span className="label" style={{ fontSize: '10px' }}>Osaka, Japan</span>
       </footer>
-    </div>
+    </>
   );
 }
 
 function Section({ label, body }: { label: string; body: string }) {
   return (
-    <div className="mt-10">
-      <p className="text-xs font-light mb-3" style={labelStyle}>{label}</p>
-      <p className="font-light" style={{ color: '#333', fontSize: '0.95rem', lineHeight: 2, whiteSpace: 'pre-line', maxWidth: '42em' }}>{body}</p>
+    <div className="mt-16">
+      <span className="label mb-4">{label}</span>
+      <p className="prose-jp font-light" style={{ fontSize: '0.95rem' }}>
+        {body}
+      </p>
     </div>
   );
 }
@@ -176,15 +183,17 @@ function WorkLink({ dir, work }: { dir: 'prev' | 'next'; work: { slug: string; t
   return (
     <Link
       href={`/works/${work.slug}`}
-      className="inline-flex items-center gap-3 group"
+      className="inline-flex items-center gap-4 group"
       style={{ textDecoration: 'none', flexDirection: isNext ? 'row-reverse' : 'row' }}
     >
-      <span className="relative shrink-0 overflow-hidden" style={{ width: '48px', height: '48px', background: '#f0f0f0' }}>
-        <Image src={work.thumbnail.src} alt="" fill sizes="48px" className="object-cover" />
+      <span className="relative shrink-0 overflow-hidden" style={{ width: '56px', height: '56px', background: '#e9e5dc' }}>
+        <Image src={work.thumbnail.src} alt="" fill sizes="56px" className="object-cover" />
       </span>
       <span className={isNext ? 'text-right' : ''}>
-        <span className="block text-xs font-light" style={{ color: '#aaa', letterSpacing: '0.06em' }}>{isNext ? 'next →' : '← prev'}</span>
-        <span className="block text-xs font-light" style={{ color: '#333' }}>{work.title}</span>
+        <span className="label" style={{ fontSize: '10px' }}>{isNext ? 'Next' : 'Prev'}</span>
+        <span className="block font-light mt-1" style={{ color: 'var(--ink)', fontSize: '0.85rem' }}>
+          {work.title}
+        </span>
       </span>
     </Link>
   );
