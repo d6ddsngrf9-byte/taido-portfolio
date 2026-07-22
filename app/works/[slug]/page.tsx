@@ -49,9 +49,23 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
     <>
       <Nav />
 
-      {/* ===== Lead visual ===== */}
-      <section aria-hidden="true" className="relative" style={{ height: '70svh', minHeight: 360, background: '#e9e5dc' }}>
-        <Image src={lead.src} alt="" fill sizes="100vw" className="object-cover" priority />
+      {/* ===== Lead visual =====
+           縦長の紙モノを切らずに見せるため、同じ画像を引き延ばして背景に敷き、
+           その上に作品全体（object-contain）を重ねる */}
+      <section
+        aria-hidden="true"
+        className="relative overflow-hidden"
+        style={{ height: '70svh', minHeight: 360, background: '#e9e5dc' }}
+      >
+        <Image
+          src={lead.src}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+          style={{ filter: 'blur(32px)', transform: 'scale(1.18)' }}
+        />
+        <Image src={lead.src} alt="" fill sizes="100vw" className="object-contain" priority />
       </section>
 
       <main className="px-6 md:px-10 pt-14 md:pt-20 pb-24 max-w-5xl">
