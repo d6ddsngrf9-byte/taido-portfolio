@@ -490,5 +490,394 @@
       }
     ],
     "order": 7
+  },
+  {
+    "slug": "mitsuboshi-art-hoshida",
+    "title": "みつぼしart 星田",
+    "year": "2024",
+    "client": "みつぼしart 星田",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "大阪・交野市星田のアートフェア「みつぼしart 星田」のロゴ。2年目の開催にあたり、ロゴを刷新しコンセプトも組み直した。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-mitsuboshi.jpg",
+      "alt": "みつぼしart 星田 2024 のロゴ。青い星形のシンボルとワードマーク"
+    },
+    "images": [
+      {
+        "src": "/works/logo-mitsuboshi.jpg",
+        "alt": "みつぼしart 星田 2024 のロゴ。青い星形のシンボルとワードマーク",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 8,
+    "challenge": "みつぼしart 星田は、生活介護事業所アトリエ ShiroiTo が中心となって始まった、地域に開かれたアートフェアです。2年目となる2024年、11月のひと月を会期として開催することが決まりました。\n\nロゴを刷新するにあたって、まず考えたのはこのイベントが誰のものかということでした。作家のものでも、事業所のものでも、来場者のものでもない。その三者が交わる場所そのものがイベントの正体です。",
+    "design": "新しいロゴは、3本の線が交わって星になるアスタリスクの形にしました。「みつぼし」の三つを、3つの層の重なりとして読ませています。\n\nひとつめは、ネーミングの基礎。もともとこの土地に住んでいる人、他地域から新しく参加してきた人、会期中に訪れる人。ふたつめは、参加者の多様性。生活介護事業所のメンバー、外部の作家、観覧者。みっつめは、関与者の接続。作家、鑑賞者、そのあいだをつなぐ活動をする人。\n\nどの層も「三つの異なる立場が交わる」という同じ構造をしています。だから線を3本交差させた一つの形で、three すべてを引き受けられる。異なる背景を持つ人が行き交う場であること自体を、かたちにしました。"
+  },
+  {
+    "slug": "motomelt",
+    "title": ".motomelt（モトメル）",
+    "year": "",
+    "client": ".motomelt",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "大阪・関目のリラクゼーションサロン「.motomelt（モトメル）」のロゴ。「もっと ほどける」をコンセプトに、円環に沿って文字を回したシンボル。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-motomel.jpg",
+      "alt": ".motomelt のロゴ。円環に沿って回した文字と横組みのワードマーク"
+    },
+    "images": [
+      {
+        "src": "/works/logo-motomel.jpg",
+        "alt": ".motomelt のロゴ。円環に沿って回した文字と横組みのワードマーク",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 9
+  },
+  {
+    "slug": "cuff-coffee",
+    "title": "CUFF COFFEE",
+    "year": "",
+    "client": "CUFF COFFEE",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "コーヒーショップ「CUFF COFFEE」のロゴ。太いサンセリフで組んだ2行のワードマーク。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-cuff.jpg",
+      "alt": "CUFF COFFEE のロゴ。太いサンセリフの2行組み"
+    },
+    "images": [
+      {
+        "src": "/works/logo-cuff.jpg",
+        "alt": "CUFF COFFEE のロゴ。太いサンセリフの2行組み",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 10
+  },
+  {
+    "slug": "kanaderu",
+    "title": "カナデル",
+    "year": "2022",
+    "client": "間借りカレー カナデル",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "ピアノの伴奏とともにカレーが楽しめる「間借りカレー カナデル」のロゴとショップカード。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-kanaderu.jpg",
+      "alt": "間借りカレー カナデル のロゴ。「咖」の字とスプーンのシンボル"
+    },
+    "images": [
+      {
+        "src": "/works/logo-kanaderu.jpg",
+        "alt": "間借りカレー カナデル のロゴ。「咖」の字とスプーンのシンボル",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 11,
+    "design": "「歌うこと」と「食べること」が大好きな店主が営む店です。この二つをひとつの形にまとめました。\n\nカレーを漢字で書くと「咖喱」。その「咖」の字には「口」が2つあります。歌う口と、食べる口。ここをモチーフにして、スプーンと組み合わせたシンボルにしました。\n\nショップカードは臨機応変な営業スタイルのお店なので、載せる情報を絞っています。裏面はQRコードを主役にして、SNSの更新を見にいってもらう設計にしました。"
+  },
+  {
+    "slug": "tsumeya-karameru",
+    "title": "爪屋からめる",
+    "year": "2022",
+    "client": "爪屋からめる",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "大阪・関目のレンタルサロン「爪屋からめる」のロゴとショップカード。ネイル・ヨガ・姿勢矯正など、さまざまな色が融け合う場所。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-karameru.jpg",
+      "alt": "爪屋からめる のロゴ。筆文字の縦組み"
+    },
+    "images": [
+      {
+        "src": "/works/logo-karameru.jpg",
+        "alt": "爪屋からめる のロゴ。筆文字の縦組み",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 12,
+    "challenge": "爪屋からめるは、ネイリストのなのんさんが運営するレンタルサロンです。「人生を愉しむ人を応援するサロン」として、オーナーの面談をクリアした方だけが借りられます。\n\n民家を改装した空間で、ネイル、ヨガ、姿勢矯正——借り手によって営まれる内容が変わります。特定の業種の看板にしてしまうと、この場所の幅を狭めてしまいます。",
+    "design": "ロゴは筆文字で縦に組み、「爪屋」を小さな朱の印で添えました。ネイルの記号を使わず、屋号そのものを佇まいとして立てています。業種ではなく場所の名前として読めることを優先しました。\n\nショップカードは縦型二つ折りの名刺サイズ。想い、スペースの紹介、利用料金と時間、地図、公式LINEへの導線までを、開く動作の順に置いています。"
+  },
+  {
+    "slug": "wagokoro-pudding",
+    "title": "和ごころぷりん",
+    "year": "",
+    "client": "和ごころぷりん",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "大阪・福島のプリン専門店「和ごころぷりん」のロゴ。黒い円と明朝で組んだ縦書きのワードマーク。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-wagokoro.jpg",
+      "alt": "和ごころぷりん のロゴ。黒い円と明朝の縦組み"
+    },
+    "images": [
+      {
+        "src": "/works/logo-wagokoro.jpg",
+        "alt": "和ごころぷりん のロゴ。黒い円と明朝の縦組み",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 13
+  },
+  {
+    "slug": "yonayona-parlor",
+    "title": "よなよなパーラー",
+    "year": "2022",
+    "client": "実家めし よなよなパーラー",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "大阪・福島に開いた「実家めし よなよなパーラー」のロゴとショップカード。実家で食べていたような家庭料理を出す店の、看板のような文字。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-yonayona.jpg",
+      "alt": "よなよなパーラー のロゴ。手描き文字と看板風のあしらい"
+    },
+    "images": [
+      {
+        "src": "/works/logo-yonayona.jpg",
+        "alt": "よなよなパーラー のロゴ。手描き文字と看板風のあしらい",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 14,
+    "challenge": "よなよなパーラーは、実家で食べていたような家庭料理や大皿料理を「実家めし」と名づけ、懐かしい気持ちで楽しんでもらうことをめざした店です。\n\n店名にある「パーラー」は、お客様をおもてなしする部屋という意味を持ちます。ただ、その語感のままに整えると上品になりすぎる。実家めしに似合う、堅苦しくない迎え方を探しました。",
+    "design": "打ち合わせのとき「レトロなホーロー看板のような文字の雰囲気にしたい」というお話がありました。それならばと、ロゴ自体を看板のかたちで組んでいます。\n\n下地のシルエットは碗。横に引き伸ばせば大皿にもなります。ひとりぶんの茶碗と、みんなで囲む大皿。どちらも実家の食卓にあるものです。"
+  },
+  {
+    "slug": "myar",
+    "title": "myar.",
+    "year": "2022",
+    "client": "myar.",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "米粉シフォンケーキのお店「myar.（マイアー）」のロゴとショップカード。小さくはじめる店に合わせて、小さくつくった。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-myar.jpg",
+      "alt": "myar. のロゴ。手描きのワードマークと器のイラスト"
+    },
+    "images": [
+      {
+        "src": "/works/logo-myar.jpg",
+        "alt": "myar. のロゴ。手描きのワードマークと器のイラスト",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 15,
+    "challenge": "myar. は米粉のシフォンケーキのお店です。グルテンフリーで素材にもこだわり、おとなもこどもも、みんなが美味しく食べられるおやつをめざしてつくられています。\n\n当時は不定期の間借り営業。小さくはじめるお店でした。",
+    "design": "ロゴは線を細く保ち、器とフォークを一筆書きのような手描きで置いています。ふっくらと軽い焼き上がりに、太い輪郭は合いません。\n\nショップカードも同じ考え方で、判型を小さくし、紙の素材にこだわって選びました。お店の規模に合った物量にすることも、設計のうちだと考えています。"
+  },
+  {
+    "slug": "ohayo-kango",
+    "title": "おはよー看護",
+    "year": "",
+    "client": "おはよー看護",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "訪問看護「おはよー看護」のロゴ。朝の陽を思わせるアーチと「看護」を組み合わせた横組み。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-ohayo.jpg",
+      "alt": "おはよー看護 のロゴ。黄色いアーチと横組みの店名"
+    },
+    "images": [
+      {
+        "src": "/works/logo-ohayo.jpg",
+        "alt": "おはよー看護 のロゴ。黄色いアーチと横組みの店名",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 16
+  },
+  {
+    "slug": "oyasuminasai-kaigo",
+    "title": "おやすみなさい介護",
+    "year": "2023",
+    "client": "おやすみなさい介護（BBQ.care合同会社）",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "大阪・京橋を拠点に、18時から24時のナイトケアを行う訪問介護福祉事業所「おやすみなさい介護」のロゴ。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-oyasuminasai.jpg",
+      "alt": "おやすみなさい介護 のロゴ。紺色の夜空と星のモチーフ"
+    },
+    "images": [
+      {
+        "src": "/works/logo-oyasuminasai.jpg",
+        "alt": "おやすみなさい介護 のロゴ。紺色の夜空と星のモチーフ",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 17,
+    "challenge": "おやすみなさい介護は、18時から24時という時間帯にしぼった訪問介護の事業所です。日中ではなく、夜。支えるのは利用されるご本人だけでなく、普段介護を担っているご家族でもあります。\n\n夜のあいだ、誰かが来てくれる。その安心を、事業所名を見た瞬間に伝えられるかどうかが要でした。",
+    "design": "夜空と、安心して就寝している人のシルエットで組み立てました。\n\n介護の記号を使うと、どうしても「支援される側」の話になります。そうではなく、この事業所が届けているのは夜のひとときそのものだと考え、星のある空を主役にしました。紺色の面は夜であり、同時に人が横たわる寝床の輪郭でもあります。",
+    "outcome": "同じくBBQ.care合同会社が運営する「ケアを軸にした交流地点 CARE & BAR SANRINZ」の取り組みが、介護甲子園で全国8,887組のなかから20事業所のセミファイナリストに選ばれました。\n\nデザインで関わっている事業所が、業界のなかで存在感を示し評価を集めていることを、うれしく受け取っています。"
+  },
+  {
+    "slug": "allkireis",
+    "title": "allkireis",
+    "year": "",
+    "client": "allkireis",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "「allkireis」のロゴ。夜明けの空と海（島影）をグラデーションで描いたシンボルに、細い明朝のワードマークを添えた。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-allkireis.jpg",
+      "alt": "allkireis のロゴ。夜明けのグラデーションで描いた島影のシンボル"
+    },
+    "images": [
+      {
+        "src": "/works/logo-allkireis.jpg",
+        "alt": "allkireis のロゴ。夜明けのグラデーションで描いた島影のシンボル",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 18
+  },
+  {
+    "slug": "maholova",
+    "title": "MAHOLOVA",
+    "year": "",
+    "client": "MAHOLOVA",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "「MAHOLOVA」のロゴ。海と朝日を円形にまとめたシンボルマークと、太めのワードマーク。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-maholova.jpg",
+      "alt": "MAHOLOVA のロゴ。海と朝日を円形にまとめたシンボル"
+    },
+    "images": [
+      {
+        "src": "/works/logo-maholova.jpg",
+        "alt": "MAHOLOVA のロゴ。海と朝日を円形にまとめたシンボル",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 19
+  },
+  {
+    "slug": "teijun-to-gohan",
+    "title": "定巡とご飯",
+    "year": "",
+    "client": "定巡とご飯",
+    "categories": [
+      "branding",
+      "graphic-design"
+    ],
+    "services": [
+      "ロゴデザイン"
+    ],
+    "lead": "「定巡とご飯」のロゴ。手描きの囲みのなかに明朝で店名を組んだ。",
+    "deliverables": [
+      "ロゴ"
+    ],
+    "thumbnail": {
+      "src": "/works/logo-teijun.jpg",
+      "alt": "定巡とご飯 のロゴ。手描きの囲みと明朝の店名"
+    },
+    "images": [
+      {
+        "src": "/works/logo-teijun.jpg",
+        "alt": "定巡とご飯 のロゴ。手描きの囲みと明朝の店名",
+        "caption": "ロゴ"
+      }
+    ],
+    "order": 20
   }
 ]
